@@ -237,28 +237,28 @@ button.list-group-item-primary.active {
 }
 
 .btn-outline-primary {
-  color: #696cff;
-  border-color: #696cff;
+  color: #003a75;
+  border-color: #003a75;
   background: transparent;
 }
 .btn-outline-primary:hover {
   color: #fff;
-  background-color: #5f61e6;
-  border-color: #5f61e6;
+  background-color: #003a75;
+  border-color: #003a75;
   box-shadow: 0 0.125rem 0.25rem 0 rgba(105, 108, 255, 0.4);
   transform: translateY(-1px);
 }
 .btn-check:focus + .btn-outline-primary, .btn-outline-primary:focus {
   color: #fff;
-  background-color: #5f61e6;
-  border-color: #5f61e6;
+  background-color: #003a75;
+  border-color: #003a75;
   box-shadow: none;
   transform: translateY(0);
 }
 .btn-check:checked + .btn-outline-primary, .btn-check:active + .btn-outline-primary, .btn-outline-primary:active, .btn-outline-primary.active, .btn-outline-primary.dropdown-toggle.show {
   color: #fff;
-  background-color: #595cd9;
-  border-color: #595cd9;
+  background-color: #003a75;
+  border-color: #003a75;
 }
 .btn-check:checked + .btn-outline-primary:focus, .btn-check:active + .btn-outline-primary:focus, .btn-outline-primary:active:focus, .btn-outline-primary.active:focus, .btn-outline-primary.dropdown-toggle.show:focus {
   box-shadow: none;
@@ -560,11 +560,11 @@ a {
   color: #696cff;
 }
 a:hover {
-  color: #787bff;
+  color: #003a75;
 }
 
 .fill-primary {
-  fill: #696cff;
+  fill: #539ae2;
 }
 
 .bg-navbar-theme {
@@ -745,20 +745,20 @@ html:not(.layout-menu-collapsed) .bg-menu-theme .menu-inner .menu-item .menu-lin
   background-color: rgba(67, 89, 113, 0.04);
 }
 .bg-menu-theme .menu-inner .menu-sub > .menu-item.active .menu-icon {
-  color: #696cff;
+  color: #003a75;
 }
 .bg-menu-theme .menu-inner > .menu-item.active > .menu-link {
-  color: #696cff;
-  background-color: rgba(105, 108, 255, 0.16) !important;
+  color: #003a75;
+  background-color: rgba(105, 153, 255, 0.16) !important;
 }
 .bg-menu-theme .menu-inner > .menu-item.active:before {
-  background: #696cff;
+  background: #003a75;
 }
 .bg-menu-theme .menu-sub > .menu-item > .menu-link:before {
   background-color: #b4bdc6 !important;
 }
 .bg-menu-theme .menu-sub > .menu-item.active > .menu-link:not(.menu-toggle):before {
-  background-color: #696cff !important;
+  background-color: #003a75 !important;
   border: 3px solid #e7e7ff !important;
 }
 

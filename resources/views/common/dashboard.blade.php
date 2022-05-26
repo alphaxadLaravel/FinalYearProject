@@ -13,17 +13,16 @@
                 Welcome at IFM Field Management System!
               </p>
 
-              {{-- for the company here! --}}
-              {{-- <a href="javascript:;" class="btn btn-sm btn-outline-primary">Make Request</a> --}}
-
               {{-- for the HOD here --}}
-              <a href="javascript:;" class="btn btn-sm btn-outline-primary">Open Session</a>
+              {{-- <a href="javascript:;" class="btn btn-sm btn-outline-primary">Open Session</a> --}}
 
               {{-- for the supervisor here --}}
               {{-- <a href="javascript:;" class="btn btn-sm btn-outline-primary">View Students</a> --}}
 
               {{-- For the student here --}}
-              {{-- <a href="javascript:;" class="btn btn-sm btn-outline-primary">Fill logbook</a> --}}
+              <a href="javascript:;" class="btn btn-sm btn-outline-primary">Fill logbook</a>
+              {{-- For students in non field Session --}}
+              {{-- <a href="javascript:;" class="btn btn-sm btn-outline-primary">Browsee Companies</a> --}}
 
             </div>
           </div>
@@ -44,30 +43,35 @@
     <div class="col-lg-4 col-md-4 order-1">
       <div class="row">
         <div class="col-lg-6 col-md-12 col-6 mb-4">
+         <a href="/dashboard" class="text-ifm">
           <div class="card">
             <div class="card-body">
-              {{-- for the company here --}}
-              {{-- <span class="fw-semibold d-block mb-1"><i class="mdi mdi-telegram "></i> Requests</span>
-              <h3 class="card-title mb-2 text-ifm">3</h3> --}}
-              
-              {{-- for the HOD heere --}}
-              <span class="fw-semibold d-block mb-1"><i class="mdi mdi-account-multiple-outline "></i>Students</span>
-              <h3 class="card-title mb-2 text-ifm">4</h3>
+              {{-- HOD will see totla students in his faculty --}}
+              {{-- Supervisor will see total students allocated to Guide --}}
+              {{-- <span class="fw-semibold d-block mb-1"><i class="mdi mdi-account-multiple-outline "></i>Students</span> --}}
+              {{-- the student will see weeks remaining --}}
+              <span class="fw-semibold d-block mb-1"><i class="mdi mdi-calendar-clock "></i>Weeks</span>
+              <h3 class="card-title mb-2 ">4</h3>
             </div>
           </div>
+        </a>
         </div>
         <div class="col-lg-6 col-md-12 col-6 mb-4">
+         <a href="/dashboard" class="text-ifm">
           <div class="card">
             <div class="card-body">
-              {{-- for the company here --}}
-              {{-- <span class="fw-semibold d-block mb-1"><i class="mdi mdi-check-all "></i> Responses</span>
-              <h3 class="card-title mb-2 text-ifm">4</h3> --}}
+              {{-- The HOD will see The supervisors count --}}
+              {{-- <span class="fw-semibold d-block mb-1"><i class="mdi mdi-account-network "></i>Supervisors</span> --}}
+              {{-- The student will see day remaining  --}}
+              {{-- <span class="fw-semibold d-block mb-1"><i class="mdi mdi-calendar "></i>Days left</span> --}}
 
-              {{-- for the HOD here --}}
-              <span class="fw-semibold d-block mb-1"><i class="mdi mdi-account-network "></i>Supervisors</span>
-              <h3 class="card-title mb-2 text-ifm">4</h3>
+              {{-- The Supervisor will see Assessments --}}
+              <span class="fw-semibold d-block mb-1"><i class="mdi mdi mdi-message-video"></i>Assesments</span>
+
+              <h3 class="card-title mb-2 ">4</h3>
             </div>
           </div>
+        </a>
         </div>
       </div>
     </div>
@@ -77,7 +81,17 @@
         <div class="row row-bordered g-0">
           <div class="col-md-12">
             {{-- for the company here --}}
-            <h5 class="card-header m-0 me-2 pb-3"><i class="mdi mdi-check-all "></i> Students Responses</h5>
+           <div class="d-flex justify-content-between align-items-center ">
+            <h5 class="card-header m-0 me-2 pb-3"><i class="mdi mdi-check-all "></i> Your Students</h5>
+            <div class="dropdown px-3">
+              <button class="btn p-0" type="button" id="cardOpt3" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="mdi mdi-dots-vertical"></i>
+              </button>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt3" style="">
+                <a class="dropdown-item" href="javascript:void(0);">View All</a>
+              </div>
+            </div>
+           </div>
             <div class="table-responsive text-nowrap">
               <table class="table">
                 <thead>
@@ -110,25 +124,33 @@
     <div class="col-12 col-md-8 col-lg-4 order-3 order-md-2">
       <div class="row">
         <div class="col-lg-6 col-md-12 col-6 mb-4">
-          <div class="card">
-            <div class="card-body">
-              {{-- for the company here --}}
-              {{-- <span class="fw-semibold d-block mb-1"><i class="mdi mdi-book-multiple "></i> Courses</span>
-              <h3 class="card-title mb-2 text-success">3</h3> --}}
+          <a href="/dashboard" class="text-ifm">
+            <div class="card">
+              <div class="card-body">
+                {{-- HOD will see the list of companies Available --}}
+                {{-- The student wil also see the list of Companies Available --}}
+                {{-- <span class="fw-semibold d-block mb-1"><i class="mdi mdi-garage "></i>Companies</span> --}}
 
-              {{-- for the HOD here --}}
-              <span class="fw-semibold d-block mb-1"><i class="mdi mdi-garage "></i>Companies</span>
-              <h3 class="card-title mb-2 text-ifm">5</h3>
+                {{-- The Supervisor will see the  --}}
+                <span class="fw-semibold d-block mb-1"><i class="mdi mdi-cloud-upload "></i>Uploads</span>
+
+                <h3 class="card-title mb-2 ">5</h3>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
         <div class="col-lg-6 col-md-12 col-6 mb-4">
-          <div class="card">
-            <div class="card-body">
-              <span class="fw-semibold d-block mb-1"><i class="mdi mdi-telegram "></i>Requests</span>
-              <h3 class="card-title mb-2 text-ifm">3</h3>
+          <a href="/login" class="text-ifm">
+            <div class="card">
+              <div class="card-body">
+                {{-- Student will see comments made by him/her --}}
+                {{-- supervisor will see the comments made by his/her students --}}
+                {{-- The HOD will comments of all students --}}
+                <span class="fw-semibold d-block mb-1"><i class="mdi mdi-comment-multiple-outline "></i>Comments</span>
+                <h3 class="card-title mb-2 ">3</h3>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
         <div class="col-12 mb-4">
           <div class="card">
