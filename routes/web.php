@@ -13,6 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// login page route
 Route::get('/', function () {
-    return view('welcome');
+    return view('outside.login');
+});
+
+// forgot password Route
+Route::get('/forgot', function () {
+    return view('outside.forgot_password');
+});
+
+// Route to the Dashboard
+Route::get('/dashboard', function () {
+    return view('common.dashboard');
 });
