@@ -37,12 +37,12 @@
                 <div class="d-flex">
                 <div class="flex-shrink-0 me-3">
                     <div class="avatar avatar-online">
-                    <img src="{{asset('img/alpha.jpg')}}" alt class="w-px-40 h-auto rounded-circle" />
+                    <img src="{{asset('images/alpha.jpg')}}" alt class="w-px-40 rounded-circle" />
                     </div>
                 </div>
                 <div class="flex-grow-1">
                     <span class="fw-semibold d-block">John Doe</span>
-                    <small class="text-muted">Admin</small>
+                    <small class="text-muted">Student</small>
                 </div>
                 </div>
             </a>
@@ -58,14 +58,14 @@
             </li>
             <li>
             <a class="dropdown-item" href="#">
-                <i class="bx bx-cog me-2"></i>
+                <i class="mdi mdi-cog me-2"></i>
                 <span class="align-middle">Settings</span>
             </a>
             </li>
             <li>
             <a class="dropdown-item" href="#">
                 <span class="d-flex align-items-center align-middle">
-                <i class="flex-shrink-0 bx bx-credit-card me-2"></i>
+                <i class="flex-shrink-0 mdi mdi-bell-ring-outline me-2"></i>
                 <span class="flex-grow-1 align-middle">Notification</span>
                 <span class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">4</span>
                 </span>
@@ -76,7 +76,7 @@
             </li>
             <li>
             <a class="dropdown-item" href="/">
-                <i class="mdi mdi-power me-2"></i>
+                <i class="mdi mdi-power-settings me-2"></i>
                 <span class="align-middle">Log Out</span>
             </a>
             </li>

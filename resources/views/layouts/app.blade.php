@@ -24,6 +24,12 @@
     <link rel="stylesheet" href="{{asset('vendor/css/core.css')}}"  />
     <link rel="stylesheet" href="{{asset('vendor/css/theme-default.css')}}"  />
     <link rel="stylesheet" href="{{asset('css/demo.css')}}" />
+    <style>
+      body {
+          font-family: 'Nunito', sans-serif;
+          background-color: #f8fafc;
+      }
+  </style>
 
     <script src="{{asset('vendor/js/helpers.js')}}"></script>
 </head>

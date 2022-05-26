@@ -5,9 +5,9 @@
     <div class="col-lg-8 mb-4 order-0">
       <div class="card">
         <div class="d-flex align-items-end row">
-          <div class="col-sm-7 d-flex justify-content-center align-items-center">
+          <div class="col-sm-7 ">
             <div class="card-body">
-              <h5 class="card-title text-primary">Hi Alphaxad! 👋</h5>
+              <h5 class="card-title text-ifm">Hi Alphaxad! 👋</h5>
               <p class="mb-4">
                 {{-- Welcome at IFM Field Management System. <span class="fw-bold">50%</span>  --}}
                 Welcome at IFM Field Management System!
@@ -48,11 +48,11 @@
             <div class="card-body">
               {{-- for the company here --}}
               {{-- <span class="fw-semibold d-block mb-1"><i class="mdi mdi-telegram "></i> Requests</span>
-              <h3 class="card-title mb-2 text-success">3</h3> --}}
+              <h3 class="card-title mb-2 text-ifm">3</h3> --}}
               
               {{-- for the HOD heere --}}
-              <span class="fw-semibold d-block mb-1"><i class="mdi mdi-account-multiple-outline "></i> Students</span>
-              <h3 class="card-title mb-2 text-success">4</h3>
+              <span class="fw-semibold d-block mb-1"><i class="mdi mdi-account-multiple-outline "></i>Students</span>
+              <h3 class="card-title mb-2 text-ifm">4</h3>
             </div>
           </div>
         </div>
@@ -61,11 +61,11 @@
             <div class="card-body">
               {{-- for the company here --}}
               {{-- <span class="fw-semibold d-block mb-1"><i class="mdi mdi-check-all "></i> Responses</span>
-              <h3 class="card-title mb-2 text-success">4</h3> --}}
+              <h3 class="card-title mb-2 text-ifm">4</h3> --}}
 
               {{-- for the HOD here --}}
-              <span class="fw-semibold d-block mb-1"><i class="mdi mdi-account-network "></i> Supervisors</span>
-              <h3 class="card-title mb-2 text-success">4</h3>
+              <span class="fw-semibold d-block mb-1"><i class="mdi mdi-account-network "></i>Supervisors</span>
+              <h3 class="card-title mb-2 text-ifm">4</h3>
             </div>
           </div>
         </div>
@@ -117,16 +117,16 @@
               <h3 class="card-title mb-2 text-success">3</h3> --}}
 
               {{-- for the HOD here --}}
-              <span class="fw-semibold d-block mb-1"><i class="mdi mdi-garage "></i> Companies</span>
-              <h3 class="card-title mb-2 text-success">5</h3>
+              <span class="fw-semibold d-block mb-1"><i class="mdi mdi-garage "></i>Companies</span>
+              <h3 class="card-title mb-2 text-ifm">5</h3>
             </div>
           </div>
         </div>
         <div class="col-lg-6 col-md-12 col-6 mb-4">
           <div class="card">
             <div class="card-body">
-              <span class="fw-semibold d-block mb-1"><i class="mdi mdi-telegram "></i> Requests</span>
-              <h3 class="card-title mb-2 text-success">3</h3>
+              <span class="fw-semibold d-block mb-1"><i class="mdi mdi-telegram "></i>Requests</span>
+              <h3 class="card-title mb-2 text-ifm">3</h3>
             </div>
           </div>
         </div>
@@ -145,7 +145,7 @@
                       @endfor
                     </div>
                     <div class="col-md-12 d-flex justify-content-end">
-                      <a href="#" class="text-success"><i class="mdi mdi-plus"></i><small>Add new Course</small></a>
+                      <a href="#" class="text-ifm"><i class="mdi mdi-plus"></i><small>Add new Course</small></a>
                     </div>
                   </div>
                 </div>

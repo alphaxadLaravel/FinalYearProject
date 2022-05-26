@@ -2,7 +2,7 @@
     <div class="app-brand demo">
       <a href="index.html" class="app-brand-link">
         
-        <span class="demo menu-text fw-bolder ms-2">IFM Field Management</span>
+        <span class="demo text-ifm fw-bolder ms-2">IFM Field Management</span>
 
       </a>
 
@@ -16,7 +16,7 @@
     <ul class="menu-inner py-1">
      
       <li class="menu-item active">
-        <a href="index.html" class="menu-link">
+        <a href="/dashboard" class="menu-link">
           <i class="menu-icon mdi mdi-av-timer"></i>
           <div data-i18n="Analytics">Dashboard</div>
         </a>
@@ -29,14 +29,15 @@
         </a>
 
         <ul class="menu-sub">
-          <li class="menu-item">
-            <a href="layouts-without-menu.html" class="menu-link">
-              <div data-i18n="Without menu">Choose Allocation</div>
-            </a>
-          </li>
+         
           <li class="menu-item">
             <a href="layouts-without-navbar.html" class="menu-link">
               <div data-i18n="Without navbar">Self Allocate</div>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="layouts-without-menu.html" class="menu-link">
+              <div data-i18n="Without menu">Welcome Letter</div>
             </a>
           </li>
         </ul>
@@ -58,28 +59,18 @@
       <li class="menu-item">
         <a href="javascript:void(0);" class="menu-link menu-toggle">
           <i class="menu-icon mdi mdi-garage"></i>
-          <div data-i18n="Layouts">companies</div>
+          <div data-i18n="Layouts">Companies</div>
         </a>
 
         <ul class="menu-sub">
           <li class="menu-item">
             <a href="layouts-container.html" class="menu-link">
-              <div data-i18n="Container">Approved</div>
+              <div data-i18n="Container">Add New</div>
             </a>
           </li>
           <li class="menu-item">
             <a href="layouts-without-menu.html" class="menu-link">
-              <div data-i18n="Without menu">Requests</div>
-            </a>
-          </li>
-          <li class="menu-item">
-            <a href="layouts-without-navbar.html" class="menu-link">
-              <div data-i18n="Without navbar">Responses</div>
-            </a>
-          </li>
-          <li class="menu-item">
-            <a href="layouts-fluid.html" class="menu-link">
-              <div data-i18n="Fluid">History</div>
+              <div data-i18n="Without menu">Browse</div>
             </a>
           </li>
         </ul>

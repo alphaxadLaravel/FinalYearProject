@@ -16,10 +16,11 @@
     <style>
         body {
             font-family: 'Nunito', sans-serif;
+            background-color: #f8fafc;
         }
     </style>
 </head>
-<body>
+<body class="row m-auto d-flex justify-content-center align-items-center">
     @yield('outside')
 
     
