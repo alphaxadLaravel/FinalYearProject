@@ -12,18 +12,18 @@
                 {{-- Welcome at IFM Field Management System. <span class="fw-bold">50%</span>  --}}
                 Welcome at IFM Field Management System!
               </p>
-
+              @if ($student)
+                {{-- For the student here --}}
+                <a href="javascript:;" class="btn btn-sm btn-outline-primary">Fill logbook</a>
+                {{-- For students in non field Session --}}
+                {{-- <a href="javascript:;" class="btn btn-sm btn-outline-primary">Browsee Companies</a> --}}
+              @elseif($hod)
               {{-- for the HOD here --}}
-              {{-- <a href="javascript:;" class="btn btn-sm btn-outline-primary">Open Session</a> --}}
-
+              <a href="javascript:;" class="btn btn-sm btn-outline-primary">Open Session</a>
+              @elseif($supervisor)
               {{-- for the supervisor here --}}
-              {{-- <a href="javascript:;" class="btn btn-sm btn-outline-primary">View Students</a> --}}
-
-              {{-- For the student here --}}
-              <a href="javascript:;" class="btn btn-sm btn-outline-primary">Fill logbook</a>
-              {{-- For students in non field Session --}}
-              {{-- <a href="javascript:;" class="btn btn-sm btn-outline-primary">Browsee Companies</a> --}}
-
+              <a href="javascript:;" class="btn btn-sm btn-outline-primary">View Students</a>
+              @endif
             </div>
           </div>
           <div class="col-sm-5 text-center text-sm-left">
@@ -48,10 +48,20 @@
             <div class="card-body">
               {{-- HOD will see totla students in his faculty --}}
               {{-- Supervisor will see total students allocated to Guide --}}
-              {{-- <span class="fw-semibold d-block mb-1"><i class="mdi mdi-account-multiple-outline "></i>Students</span> --}}
-              {{-- the student will see weeks remaining --}}
-              <span class="fw-semibold d-block mb-1"><i class="mdi mdi-calendar-clock "></i>Weeks</span>
+
+              @if ($student)
+                <span class="fw-semibold d-block mb-1"><i class="mdi mdi-calendar-clock "></i>Weeks</span>
+              @elseif($hod || $supervisor)
+                <span class="fw-semibold d-block mb-1"><i class="mdi mdi-account-multiple-outline "></i>Students</span>
+              @endif
               <h3 class="card-title mb-2 ">4</h3>
+              {{-- @if ($student)
+       
+              @elseif($hod)
+              
+              @elseif($supervisor)
+              
+              @endif --}}
             </div>
           </div>
         </a>
@@ -60,13 +70,16 @@
          <a href="/dashboard" class="text-ifm">
           <div class="card">
             <div class="card-body">
-              {{-- The HOD will see The supervisors count --}}
-              {{-- <span class="fw-semibold d-block mb-1"><i class="mdi mdi-account-network "></i>Supervisors</span> --}}
-              {{-- The student will see day remaining  --}}
-              {{-- <span class="fw-semibold d-block mb-1"><i class="mdi mdi-calendar "></i>Days left</span> --}}
-
-              {{-- The Supervisor will see Assessments --}}
+              @if ($student)
+              <span class="fw-semibold d-block mb-1"><i class="mdi mdi-calendar "></i>Days left</span>
+              
+              @elseif($hod)
+              
+              <span class="fw-semibold d-block mb-1"><i class="mdi mdi-account-network "></i>Supervisors</span>
+              @elseif($supervisor)
               <span class="fw-semibold d-block mb-1"><i class="mdi mdi mdi-message-video"></i>Assesments</span>
+              
+              @endif
 
               <h3 class="card-title mb-2 ">4</h3>
             </div>
@@ -127,12 +140,11 @@
           <a href="/dashboard" class="text-ifm">
             <div class="card">
               <div class="card-body">
-                {{-- HOD will see the list of companies Available --}}
-                {{-- The student wil also see the list of Companies Available --}}
-                {{-- <span class="fw-semibold d-block mb-1"><i class="mdi mdi-garage "></i>Companies</span> --}}
-
-                {{-- The Supervisor will see the  --}}
-                <span class="fw-semibold d-block mb-1"><i class="mdi mdi-cloud-upload "></i>Uploads</span>
+              @if ($student || $hod)
+                <span class="fw-semibold d-block mb-1"><i class="mdi mdi-garage "></i>Companies</span>
+              @elseif($supervisor)
+              <span class="fw-semibold d-block mb-1"><i class="mdi mdi-cloud-upload "></i>Uploads</span>
+              @endif
 
                 <h3 class="card-title mb-2 ">5</h3>
               </div>

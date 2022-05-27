@@ -24,8 +24,8 @@
                         <form action="/dashboard" method="get">
                             @csrf
                             <div class="form-group mb-4 mt-4">
-                              <label for="" class="text-muted mb-1">Username or Reg-Number </label>
-                              <input type="text" class="form-control" name="username" id="" aria-describedby="helpId" placeholder="Enter Username or Reg-Number">
+                              <label for="" class="text-muted mb-1">Reg-Number or PF-Number </label>
+                              <input type="text" class="form-control" name="username" id="" aria-describedby="helpId" placeholder="Enter Reg-Number or PF-Number">
                             </div>
                             <label class="d-flex justify-content-between" for=""><span class="text-muted">Password</span> <small><a href="/forgot" class="text-ifm">Forgot Password ?</a></small></label>
                             <input type="password" class="form-control" name="password" id="" aria-describedby="helpId" placeholder="Enter Password">

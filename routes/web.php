@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,5 @@ Route::get('/forgot', function () {
 });
 
 // Route to the Dashboard
-Route::get('/dashboard', function () {
-    return view('common.dashboard');
-});
+
+Route::get('/dashboard',[DashboardController::class,'dashboard']);
