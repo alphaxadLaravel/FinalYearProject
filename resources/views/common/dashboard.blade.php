@@ -12,15 +12,15 @@
                 {{-- Welcome at IFM Field Management System. <span class="fw-bold">50%</span>  --}}
                 Welcome at IFM Field Management System!
               </p>
-              @if ($student)
+              @if (session()->get('user')['status'] == "student")
                 {{-- For the student here --}}
                 <a href="javascript:;" class="btn btn-sm btn-outline-primary">Fill logbook</a>
                 {{-- For students in non field Session --}}
                 {{-- <a href="javascript:;" class="btn btn-sm btn-outline-primary">Browsee Companies</a> --}}
-              @elseif($hod)
+              @elseif(session()->get('user')['status'] == "hod" )
               {{-- for the HOD here --}}
               <a href="javascript:;" class="btn btn-sm btn-outline-primary">Open Session</a>
-              @elseif($supervisor)
+              @elseif(session()->get('user')['status'] == "supervisor")
               {{-- for the supervisor here --}}
               <a href="javascript:;" class="btn btn-sm btn-outline-primary">View Students</a>
               @endif
@@ -49,9 +49,9 @@
               {{-- HOD will see totla students in his faculty --}}
               {{-- Supervisor will see total students allocated to Guide --}}
 
-              @if ($student)
+              @if (session()->get('user')['status'] == "student")
                 <span class="fw-semibold d-block mb-1"><i class="mdi mdi-calendar-clock "></i>Weeks</span>
-              @elseif($hod || $supervisor)
+              @elseif(session()->get('user')['status'] == "hod" || session()->get('user')['status'] == "supervisor")
                 <span class="fw-semibold d-block mb-1"><i class="mdi mdi-account-multiple-outline "></i>Students</span>
               @endif
               <h3 class="card-title mb-2 ">4</h3>
@@ -70,13 +70,11 @@
          <a href="/dashboard" class="text-ifm">
           <div class="card">
             <div class="card-body">
-              @if ($student)
+              @if (session()->get('user')['status'] == "student")
               <span class="fw-semibold d-block mb-1"><i class="mdi mdi-calendar "></i>Days left</span>
-              
-              @elseif($hod)
-              
+              @elseif(session()->get('user')['status'] == "hod")
               <span class="fw-semibold d-block mb-1"><i class="mdi mdi-account-network "></i>Supervisors</span>
-              @elseif($supervisor)
+              @elseif(session()->get('user')['status'] == "supervisor")
               <span class="fw-semibold d-block mb-1"><i class="mdi mdi mdi-message-video"></i>Assesments</span>
               
               @endif
@@ -140,9 +138,9 @@
           <a href="/dashboard" class="text-ifm">
             <div class="card">
               <div class="card-body">
-              @if ($student || $hod)
+              @if (session()->get('user')['status'] == "hod" || session()->get('user')['status'] == "student")
                 <span class="fw-semibold d-block mb-1"><i class="mdi mdi-garage "></i>Companies</span>
-              @elseif($supervisor)
+              @elseif(session()->get('user')['status'] == "supervisor")
               <span class="fw-semibold d-block mb-1"><i class="mdi mdi-cloud-upload "></i>Uploads</span>
               @endif
 

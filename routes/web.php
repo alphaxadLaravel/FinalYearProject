@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,3 +28,6 @@ Route::get('/forgot', function () {
 // Route to the Dashboard
 
 Route::get('/dashboard',[DashboardController::class,'dashboard']);
+
+// The Login Route here
+Route::post('/login',[LoginController::class,'login']);

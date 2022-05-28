@@ -24,6 +24,8 @@ class StaffFactory extends Factory
             'faculty_id'=> \App\Models\Faculty::all()->random()->id,
             'email'=> $this->faker->safeEmail(),
             'phoneNumber'=> $this->faker->phoneNumber(),
+            'status' => $this->faker->randomElement(['hod','supervisor']),
+
         ];
     }
 }
