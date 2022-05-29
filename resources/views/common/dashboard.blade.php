@@ -176,9 +176,6 @@
                         <a href="#" class="btn btn-outline-primary btn-sm">BIT</a>
                       @endfor
                     </div>
-                    <div class="col-md-12 d-flex justify-content-end">
-                      <a href="#" class="text-ifm"><i class="mdi mdi-plus"></i><small>Add new Course</small></a>
-                    </div>
                   </div>
                 </div>
               </div>
