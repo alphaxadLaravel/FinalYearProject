@@ -16,7 +16,7 @@
                     <div class="card-body ">
   
                         <div class="row d-flex flex-md-column justify-content-center align-items-center">
-                          <div class=" mb-4 mt-4">
+                          <div class=" mb-2 mt-4">
                             <h5 class="text-ifm text-center fw-bold">IFM Field Management</h5>
                         </div>
                         @if (Session::has('none'))
@@ -27,7 +27,7 @@
                         @endif
                         <form action="/login" method="POST">
                             @csrf
-                            <div class="form-group mb-4 mt-4">
+                            <div class="form-group mb-4 mt-3">
                               <label for="" class="text-muted mb-1">Reg-Number or PF-Number </label>
                               <input type="text" class="form-control" name="regNumber" id="" aria-describedby="helpId" placeholder="Enter Reg-Number or PF-Number">
                               <small class="text-danger">

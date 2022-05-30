@@ -31,29 +31,54 @@
         <ul class="menu-sub">
          
           <li class="menu-item">
-            <a href="layouts-without-navbar.html" class="menu-link">
+            <a href="/self_allocate" class="menu-link">
               <div data-i18n="Without navbar">Self Allocate</div>
             </a>
           </li>
           <li class="menu-item">
-            <a href="layouts-without-menu.html" class="menu-link">
+            <a href="/welcome_letter" class="menu-link">
               <div data-i18n="Without menu">Welcome Letter</div>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="/allocations" class="menu-link">
+              <div data-i18n="Without navbar">Allocations</div>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="/field_arrival" class="menu-link">
+              <div data-i18n="Without menu">Field Arrival</div>
             </a>
           </li>
         </ul>
       </li>
-
+      
       <li class="menu-item">
-        <a href="cards-basic.html" class="menu-link">
-          <i class="menu-icon mdi mdi-account-multiple-outline"></i>
-          <div data-i18n="Basic">Students</div>
-        </a>
-      </li>
-      <li class="menu-item">
-        <a href="cards-basic.html" class="menu-link">
+        <a href="/all_supervisors" class="menu-link">
           <i class="menu-icon mdi mdi-account-network"></i>
           <div data-i18n="Basic">Supervisors</div>
         </a>
+      </li>
+
+      <li class="menu-item">
+        <a href="javascript:void(0);" class="menu-link menu-toggle">
+          <i class="menu-icon mdi mdi-account-multiple-outline"></i>
+          <div data-i18n="Layouts">students</div>
+        </a>
+
+        <ul class="menu-sub">
+         
+          <li class="menu-item">
+            <a href="/all_students" class="menu-link">
+              <div data-i18n="Without navbar">All Students</div>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="/supervision" class="menu-link">
+              <div data-i18n="Without navbar">Supervision</div>
+            </a>
+          </li>
+        </ul>
       </li>
       
       <li class="menu-item">
@@ -64,24 +89,38 @@
 
         <ul class="menu-sub">
           <li class="menu-item">
-            <a href="layouts-container.html" class="menu-link">
+            <a href="/add_company" class="menu-link">
               <div data-i18n="Container">Add New</div>
             </a>
           </li>
           <li class="menu-item">
-            <a href="layouts-without-menu.html" class="menu-link">
+            <a href="/browse_companies" class="menu-link">
               <div data-i18n="Without menu">Browse</div>
             </a>
           </li>
         </ul>
       </li>
-  
+
       <li class="menu-item">
-        <a href="cards-basic.html" class="menu-link">
+        <a href="javascript:void(0);" class="menu-link menu-toggle">
           <i class="menu-icon mdi mdi-comment-multiple-outline"></i>
-          <div data-i18n="Basic">Comments</div>
+          <div data-i18n="Layouts">Comments</div>
         </a>
+
+        <ul class="menu-sub">
+          <li class="menu-item">
+            <a href="/comment" class="menu-link">
+              <div data-i18n="Container">Create Comment</div>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="/comments_list" class="menu-link">
+              <div data-i18n="Without menu">All Comments</div>
+            </a>
+          </li>
+        </ul>
       </li>
+  
       <li class="menu-item">
         <a href="cards-basic.html" class="menu-link">
           <i class="menu-icon mdi mdi-message-video"></i>
@@ -96,12 +135,12 @@
 
         <ul class="menu-sub">
           <li class="menu-item">
-            <a href="layouts-without-menu.html" class="menu-link">
+            <a href="/fill_logbook" class="menu-link">
               <div data-i18n="Without menu">Fill logbook</div>
             </a>
           </li>
           <li class="menu-item">
-            <a href="layouts-without-navbar.html" class="menu-link">
+            <a href="/logbook_preview" class="menu-link">
               <div data-i18n="Without navbar">Full Preview</div>
             </a>
           </li>

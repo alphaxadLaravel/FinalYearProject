@@ -13,6 +13,10 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/icons.min.css') }}" rel="stylesheet">
+    
+    <link rel="stylesheet" href="{{asset('vendor/css/core.css')}}"  />
+    <link rel="stylesheet" href="{{asset('vendor/css/theme-default.css')}}"  />
+    <link rel="stylesheet" href="{{asset('css/demo.css')}}" />
     <style>
         body {
             font-family: 'Nunito', sans-serif;

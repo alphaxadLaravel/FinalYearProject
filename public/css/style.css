@@ -3,6 +3,33 @@
     color: #003a75;
 }
 
+.timeline {
+  /* border-left: 1px solid hsl(0, 0%, 90%); */
+  border-left: 1px solid #003a75;
+  position: relative;
+  list-style: none;
+}
+
+.timeline .timeline-item {
+  position: relative;
+}
+
+.timeline .timeline-item:after {
+  position: absolute;
+  display: block;
+  top: 0;
+}
+
+.timeline .timeline-item:after {
+  /* background-color: hsl(0, 0%, 90%); */
+  background-color: #003a75;
+  left: -38px;
+  border-radius: 50%;
+  height: 11px;
+  width: 11px;
+  content: "";
+}
+
 
 
 /*
