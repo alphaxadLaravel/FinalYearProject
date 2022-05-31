@@ -154,7 +154,7 @@
           </a>
         </div>
         <div class="col-lg-6 col-md-12 col-6 mb-4">
-          <a href="/login" class="text-ifm">
+          <a href="#" class="text-ifm">
             <div class="card">
               <div class="card-body">
                 {{-- Student will see comments made by him/her --}}
