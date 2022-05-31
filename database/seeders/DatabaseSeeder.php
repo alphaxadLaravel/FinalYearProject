@@ -20,9 +20,10 @@ class DatabaseSeeder extends Seeder
         \App\Models\Staff::factory(10)->create();
         \App\Models\Login::factory(10)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        \App\Models\Login::factory()->create([
+            'pf_regNumber' => 'IMC/123',
+            'password' => '123',
+            'status' => 'student'
+        ]);
     }
 }
