@@ -17,7 +17,7 @@ class CourseFactory extends Factory
     public function definition()
     {
         return [
-            'faculty_id' => rand(1, 10),
+            'faculty_id' => rand(1, 3),
             'course' => $this->faker->unique()->text(10),
         ];
     }
