@@ -14,7 +14,7 @@
               </p>
               @if (session()->get('user')['status'] == "student")
                 {{-- For the student here --}}
-                <a href="javascript:;" class="btn btn-sm btn-outline-primary">Fill logbook</a>
+                <a href="/fill_logbook" class="btn btn-sm btn-outline-primary">Fill logbook</a>
                 {{-- For students in non field Session --}}
                 {{-- <a href="javascript:;" class="btn btn-sm btn-outline-primary">Browsee Companies</a> --}}
               @elseif(session()->get('user')['status'] == "hod" )
@@ -93,7 +93,13 @@
           <div class="col-md-12">
             {{-- for the company here --}}
            <div class="d-flex justify-content-between align-items-center ">
-            <h5 class="card-header m-0 me-2 pb-3"><i class="mdi mdi-check-all "></i> Your Students</h5>
+            <h5 class="card-header m-0 me-2 pb-3"><i class="mdi mdi-check-all "></i> 
+              @if (session()->get('user')['status'] == "student")
+                Your Fellows
+              @elseif (session()->get('user')['status'] == "hod" || session()->get('user')['status'] == "supervisor")
+                Your Students
+              @endif
+            </h5>
             <div class="dropdown px-3">
               <button class="btn p-0" type="button" id="cardOpt3" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="mdi mdi-dots-vertical"></i>
@@ -111,7 +117,6 @@
                     <th>Fullname</th>
                     <th>Course</th>
                     <th>Level</th>
-                    <th>Date </th>
                   </tr>
                 </thead>
                 <tbody class="table-border-bottom-0">
@@ -121,7 +126,6 @@
                     <td>Alpha Jozee</td>
                     <td>BIT</td>
                     <td>2nd Year</td>
-                    <td>10/02/2022</td>
                   </tr>
                   @endfor
                 </tbody>
