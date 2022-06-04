@@ -58,12 +58,6 @@
             </li>
             <li>
             <a class="dropdown-item" href="#">
-                <i class="mdi mdi-cog me-2"></i>
-                <span class="align-middle">Settings</span>
-            </a>
-            </li>
-            <li>
-            <a class="dropdown-item" href="#">
                 <span class="d-flex align-items-center align-middle">
                 <i class="flex-shrink-0 mdi mdi-bell-ring-outline me-2"></i>
                 <span class="flex-grow-1 align-middle">Notification</span>

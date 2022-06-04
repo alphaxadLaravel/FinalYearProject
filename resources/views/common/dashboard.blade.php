@@ -7,7 +7,15 @@
         <div class="d-flex align-items-end row">
           <div class="col-sm-7 ">
             <div class="card-body">
-              <h5 class="card-title text-ifm">Hi Alphaxad! 👋</h5>
+              <h5 class="card-title text-ifm">Hi 
+                @if (session()->get('user')['status'] == "student")
+                Student
+                @elseif(session()->get('user')['status'] == "hod" )
+                H.O.D
+                @elseif(session()->get('user')['status'] == "supervisor")
+                Supervisor
+                @endif
+                👋</h5>
               <p class="mb-4">
                 {{-- Welcome at IFM Field Management System. <span class="fw-bold">50%</span>  --}}
                 Welcome at IFM Field Management System!
@@ -51,10 +59,14 @@
 
               @if (session()->get('user')['status'] == "student")
                 <span class="fw-semibold d-block mb-1"><i class="mdi mdi-calendar-clock "></i>Weeks</span>
+                <h3 class="card-title mb-2 ">8</h3>
+              @elseif(session()->get('user')['status'] == "supervisor")
+                <span class="fw-semibold d-block mb-1"><i class="mdi mdi-account-multiple-outline "></i>Students</span>
+                <h3 class="card-title mb-2 ">{{$students}}</h3>
               @elseif(session()->get('user')['status'] == "hod" || session()->get('user')['status'] == "supervisor")
                 <span class="fw-semibold d-block mb-1"><i class="mdi mdi-account-multiple-outline "></i>Students</span>
+                <h3 class="card-title mb-2 ">{{$students}}</h3>
               @endif
-              <h3 class="card-title mb-2 ">4</h3>
               {{-- @if ($student)
        
               @elseif($hod)

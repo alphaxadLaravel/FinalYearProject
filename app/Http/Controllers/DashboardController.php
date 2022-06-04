@@ -3,14 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Student;
+use Session;
 class DashboardController extends Controller
 {
     public function dashboard(){
-        $student = false;
-        $hod = false;
-        $supervisor = true;
 
-        return view('common.dashboard', ['student'=>$student, 'hod'=>$hod, 'supervisor'=>$supervisor]);
+        $hodFaculty = Session::get('hod')['faculty_id'];
+        $students = Student::all()->where('faculty_id' ,'=', '8')->count();
+
+        return view('common.dashboard', ['students'=>$students]);
     }
 }

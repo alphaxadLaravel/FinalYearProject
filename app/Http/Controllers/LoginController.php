@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Login;
+use App\Models\Staff;
 
 
 class LoginController extends Controller
@@ -28,8 +29,17 @@ class LoginController extends Controller
         }
         elseif($check->status == "hod" || $check->status == "student" || $check->status == "supervisor"){
 
-            request()->session()->put('user',$check);
-            return redirect('/dashboard');
+            if($check->status == "hod"){
+
+                $hod = Staff::where(['pfNumber'=>request()->regNumber])->first();
+
+                // dd($hod);
+
+                request()->session()->put('hod',$hod);
+                request()->session()->put('user',$check);
+                return redirect('/dashboard');
+            }
+
 
         }
 
