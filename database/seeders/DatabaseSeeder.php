@@ -40,5 +40,8 @@ class DatabaseSeeder extends Seeder
         
         \App\Models\Student::factory(10)->create();
         \App\Models\Staff::factory(10)->create();
+        $this->call(RegionsTableSeeder::class);
+        $this->call(DistrictsTableSeeder::class);
+        $this->call(WardsTableSeeder::class);
     }
 }
