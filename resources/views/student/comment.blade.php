@@ -10,19 +10,19 @@
         </div>
         <div class="col-md-6">
             
-            <form action="/add_company" method="POST">
+            <form action="/commenting" method="POST">
                 @csrf
                 <div class="row mb-3">
                     <div class="col-md-12">
                         <label for="" class="text-muted mb-2">Comment Purpose <span class="text-danger">*</span></label>
-                        <select id="smallSelect" class="form-select ">
-                            <option>Select Purpose..</option>
+                        <select id="smallSelect" name="purpose" class="form-select ">
+                            <option value="">Select Purpose..</option>
                             <option value="mwanza">Assesment</option>
                             <option value="mwanza">Allocation</option>
                             <option value="mwanza">Tasks</option>
                         </select>
                         <small class="text-danger">
-                            @error('regNumber')
+                            @error('purpose')
                                 {{$message}}
                             @enderror
                         </small>
@@ -31,9 +31,9 @@
                 <div class="row mb-3">
                     <div class="col-md-12">
                         <label for="" class="text-muted mb-1">Provide Yout Comment! <span class="text-danger">*</span></label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea class="form-control"  name="comment" id="exampleFormControlTextarea1" rows="3"></textarea>
                         <small class="text-danger">
-                            @error('regNumber')
+                            @error('comment')
                                 {{$message}}
                             @enderror
                         </small>

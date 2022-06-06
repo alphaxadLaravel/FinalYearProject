@@ -24,6 +24,18 @@ class DatabaseSeeder extends Seeder
             'faculty_id' => \App\Models\Faculty::all()->random()->id,
             'status' => 'student'
         ]);
+        \App\Models\User::factory()->create([
+            'IDNumber' => 'IMC/555',
+            'password' => '55',
+            'faculty_id' => \App\Models\Faculty::all()->random()->id,
+            'status' => 'hod'
+        ]);
+        \App\Models\User::factory()->create([
+            'IDNumber' => 'IMC/000',
+            'password' => '000',
+            'faculty_id' => \App\Models\Faculty::all()->random()->id,
+            'status' => 'supervisor'
+        ]);
 
         
         \App\Models\Student::factory(10)->create();

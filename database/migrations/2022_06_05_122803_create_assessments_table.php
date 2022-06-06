@@ -19,9 +19,9 @@ return new class extends Migration
             $table->bigInteger('staff_id')->unsigned()->nullable();
             $table->string('resource');
             $table->string('status')->default('assesed');
-            $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('student_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('staff_id')->references('id')->on('staff')->onDelete('cascade')->onUpdate('cascade');
-            $table->timestamps();;
+            $table->timestamps();
         });
     }
 

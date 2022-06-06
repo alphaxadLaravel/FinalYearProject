@@ -26,6 +26,7 @@ return new class extends Migration
             $table->string('level');
             $table->string('status')->default('active');
             $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

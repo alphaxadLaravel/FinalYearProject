@@ -18,7 +18,7 @@ return new class extends Migration
             $table->bigInteger('student_id')->unsigned()->nullable();
             $table->string('path');
             $table->string('status')->default('active');
-            $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('student_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

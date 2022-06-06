@@ -10,17 +10,17 @@
         </div>
         <div class="col-md-6">
             
-            <form action="/add_company" method="POST">
+            <form action="/fillLogbook" method="POST">
                 @csrf
                 <div class="d-flex justify-content-end my-2">
-                    <small><i class="mdi mdi-calendar"></i> 20/22/2022 <span class="text-primary">Week -8</span> Day -24</small>
+                    <small><i class="mdi mdi-calendar"></i>  20/22/2022 <span class="text-primary">Week -8</span> Day -24</small>
                 </div>
                 <div class="row mb-3">
                     <div class="col-md-12">
                         <label for="" class="text-muted mb-1">Describe Tasks done Today! <span class="text-danger">*</span></label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea class="form-control" name="task" placeholder="write down all tasks you have conducted today.." id="exampleFormControlTextarea1" rows="2"></textarea>
                         <small class="text-danger">
-                            @error('regNumber')
+                            @error('task')
                                 {{$message}}
                             @enderror
                         </small>
@@ -29,9 +29,9 @@
                 <div class="row mb-3">
                     <div class="col-md-12">
                         <label for="" class="text-muted mb-1">Describe Lesson learnt Today! <span class="text-danger">*</span></label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea class="form-control" name="lesson" placeholder="write down the lessons you have learnt from the tasks.." id="exampleFormControlTextarea1" rows="2"></textarea>
                         <small class="text-danger">
-                            @error('regNumber')
+                            @error('lesson')
                                 {{$message}}
                             @enderror
                         </small>

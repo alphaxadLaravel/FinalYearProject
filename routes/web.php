@@ -4,6 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\FieldController;
+use App\Http\Controllers\CommentsController;
+use App\Http\Controllers\LogbookController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -82,6 +86,9 @@ Route::get('/comment', function () {
     return view('student.comment');
 });
 
+// route to create a comment
+Route::post('/commenting', [CommentsController::class,'commenting']);
+
 // All comments list here
 Route::get('/comments_list', function () {
     return view('common.comments');
@@ -96,6 +103,10 @@ Route::get('/allocations', function () {
 Route::get('/fill_logbook', function () {
     return view('student.fill_logbook');
 });
+
+// Route to fill the logbook
+Route::post('/fillLogbook', [LogbookController::class,'fillLogbook']);
+
 
 // Logbook Preview 
 Route::get('/logbook_preview', function () {

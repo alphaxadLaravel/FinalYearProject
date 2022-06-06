@@ -22,9 +22,10 @@ return new class extends Migration
             $table->bigInteger('distict_id')->unsigned()->nullable();
             $table->string('status')->default('nimepata');
             $table->foreign('region_id')->references('id')->on('regions')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('student_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('ward_id')->references('id')->on('wards')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('distict_id')->references('id')->on('districts')->onDelete('cascade')->onUpdate('cascade');
+            $table->timestamps();
         });
     }
 

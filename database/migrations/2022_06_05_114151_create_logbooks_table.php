@@ -19,10 +19,10 @@ return new class extends Migration
             $table->bigInteger('student_id')->unsigned()->nullable();
             $table->string('week');
             $table->string('day');
-            $table->string('tasks');
-            $table->string('lesson');
+            $table->longText('task');
+            $table->longText('lesson');
             $table->string('status')->default('filled');
-            $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('student_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }
