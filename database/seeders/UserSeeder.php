@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class LoginSeeder extends Seeder
+class userSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,7 +14,7 @@ class LoginSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(Login::class);
+        $this->call(User::class);
         
     }
 }

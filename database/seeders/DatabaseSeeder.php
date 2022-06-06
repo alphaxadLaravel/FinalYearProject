@@ -16,24 +16,17 @@ class DatabaseSeeder extends Seeder
     {
         \App\Models\Faculty::factory(10)->create();
         \App\Models\Course::factory(10)->create();
-        \App\Models\Student::factory(10)->create();
-        \App\Models\Staff::factory(10)->create();
-        \App\Models\Login::factory(10)->create();
+        \App\Models\User::factory(10)->create();
 
-        \App\Models\Login::factory()->create([
-            'pf_regNumber' => 'IMC/123',
+        \App\Models\User::factory()->create([
+            'IDNumber' => 'IMC/123',
             'password' => '123',
+            'faculty_id' => \App\Models\Faculty::all()->random()->id,
             'status' => 'student'
         ]);
-        \App\Models\Login::factory()->create([
-            'pf_regNumber' => 'IMC/555',
-            'password' => '555',
-            'status' => 'hod'
-        ]);
-        \App\Models\Login::factory()->create([
-            'pf_regNumber' => 'IMC/000',
-            'password' => '000',
-            'status' => 'supervisor'
-        ]);
+
+        
+        \App\Models\Student::factory(10)->create();
+        \App\Models\Staff::factory(10)->create();
     }
 }

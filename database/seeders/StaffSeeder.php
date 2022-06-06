@@ -15,6 +15,16 @@ class StaffSeeder extends Seeder
     public function run()
     {
         $this->call(Staff::class);
+
+        // for ($i=0; $i < 10; $i++) { 
+        //     \App\Models\Staff::factory()->create([
+        //         'pfNumber' => 'IMC/12'.i,
+        //         'midlename'=> $this->faker->firstname(),
+        //         'lastname'=> $this->faker->lastname(),
+        //         'faculty_id'=> \App\Models\Faculty::all()->random()->id,
+        //     ]);
+        // };
+       
         
     }
 }

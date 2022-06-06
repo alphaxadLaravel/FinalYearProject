@@ -17,18 +17,16 @@ class StudentFactory extends Factory
     public function definition()
     {
         return [
-            'regNumber' =>$this->faker->unique()->bothify('IMC/???/#######'),
+            'user_id' => \App\Models\User::all()->where('status','=','student')->random()->id,
             'firstname' => $this->faker->firstname(),
-            'midlename'=> $this->faker->firstname(),
+            'middlename'=> $this->faker->firstname(),
             'lastname'=> $this->faker->lastname(),
             'course_id'=> \App\Models\Course::all()->random()->id,
-            'faculty_id'=> \App\Models\Faculty::all()->random()->id,
             'year'=> rand(1, 2),
             'level'=> $this->faker->randomElement(['Diploma','Degree','Masters']),
             'email'=> $this->faker->safeEmail(),
             // 'phoneNumber'=> $this->faker->numerify('###-###-####'),
-            'phoneNumber'=> $this->faker->phoneNumber(),
-
+            'phone'=> $this->faker->phoneNumber(),
         ];
     }
 }

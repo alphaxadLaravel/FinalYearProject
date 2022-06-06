@@ -17,15 +17,14 @@ class StaffFactory extends Factory
     public function definition()
     {
         return [
-            'pfNumber'=>$this->faker->unique()->bothify('PF/#######'),
+            'user_id' => \App\Models\User::all()->where('status','=','hod')->random()->id,
             'firstname' => $this->faker->firstname(),
-            'midlename'=> $this->faker->firstname(),
-            'lastname'=> $this->faker->lastname(),
-            'faculty_id'=> \App\Models\Faculty::all()->random()->id,
+            'midlename'=> $this->faker->lastname(),
+            'lastname'=> $this->faker->firstname(),
             'email'=> $this->faker->safeEmail(),
-            'phoneNumber'=> $this->faker->phoneNumber(),
+            'phone'=> $this->faker->phoneNumber(),
             'status' => $this->faker->randomElement(['hod','supervisor']),
-
+            
         ];
     }
 }

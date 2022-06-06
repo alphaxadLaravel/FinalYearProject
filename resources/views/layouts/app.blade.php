@@ -16,7 +16,7 @@ class="light-style layout-menu-fixed"
     {{-- fonts  --}}
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
-    {{-- @livewireStyles --}}
+    @livewireStyles
 
     {{-- Styles  --}}
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -72,7 +72,7 @@ class="light-style layout-menu-fixed"
         <div class="layout-overlay layout-menu-toggle"></div>
     </div>
 
-    {{-- @livewireScripts --}}
+    @livewireScripts
     {{-- script  --}}
     <script src="{{ asset('js/app.js') }}" defer></script>
 

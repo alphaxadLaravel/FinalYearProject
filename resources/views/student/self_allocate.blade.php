@@ -10,12 +10,12 @@
         </div>
         <div class="col-md-6">
             
-            <form action="/add_company" method="POST">
+            <form action="/igot_field" method="POST">
                 @csrf
-                <span class="text-muted"><span class="text-danger">*</span> Provide the Details of your Field Area!</span>
+                <span class=""><span class="text-danger">*</span class="fw-bold"> Provide the Details of your Field Area!</span>
                 <div class="row mb-3 mt-3">
                     <div class="col-md-6 mb-2">
-                        <label for="" class="text-muted mb-2">Company Name </label>
+                        <label for="" class="text-muted mb-2">Company Name<span class="text-muted"><span class="text-danger">*</span></label>
                         <input type="text" class="form-control" name="company" id="" aria-describedby="helpId" placeholder="Enter Company name...">
                         <small class="text-danger">
                             @error('company')
@@ -24,9 +24,9 @@
                         </small>
                     </div>
                     <div class="col-md-6">
-                        <label for="" class="text-muted mb-2">Region </label>
-                        <select id="smallSelect" class="form-select ">
-                            <option>Select Region..</option>
+                        <label for="" class="text-muted mb-2">Region<span class="text-muted"><span class="text-danger">*</span></label>
+                        <select id="smallSelect" name="region" class="form-select ">
+                            <option value="">Select Region..</option>
                             <option value="mwanza">Mwanza</option>
                             <option value="mwanza">Mwanza</option>
                             <option value="mwanza">Mwanza</option>
@@ -35,7 +35,7 @@
                             
                         </select>
                         <small class="text-danger">
-                            @error('website')
+                            @error('region')
                                 {{$message}}
                             @enderror
                         </small>
@@ -43,9 +43,9 @@
                 </div>
                 <div class="row mb-3">
                     <div class="col-md-6">
-                        <label for="" class="text-muted mb-2">District</label>
-                        <select id="smallSelect" class="form-select ">
-                            <option>Select District..</option>
+                        <label for="" class="text-muted mb-2">District<span class="text-muted"><span class="text-danger">*</span></label>
+                        <select id="smallSelect" name="district" class="form-select ">
+                            <option value="">Select District..</option>
                             <option value="mwanza">Mwanza</option>
                             <option value="mwanza">Mwanza</option>
                             <option value="mwanza">Mwanza</option>
@@ -53,22 +53,22 @@
                             
                         </select>
                         <small class="text-danger">
-                            @error('regNumber')
+                            @error('district')
                                 {{$message}}
                             @enderror
                         </small>
                     </div>
                     <div class="col-md-6">
-                        <label for="" class="text-muted mb-2">Ward </label>
-                        <select id="smallSelect" class="form-select">
-                            <option>Select Ward..</option>
+                        <label for="" class="text-muted mb-2">Ward<span class="text-muted"><span class="text-danger">*</span></label>
+                        <select id="smallSelect" name="ward" class="form-select">
+                            <option value="">Select Ward..</option>
                             <option value="mwanza">Mwanza</option>
                             <option value="mwanza">Mwanza</option>
                             <option value="mwanza">Mwanza</option>
                             
                         </select>
                         <small class="text-danger">
-                            @error('email')
+                            @error('ward')
                                 {{$message}}
                             @enderror
                         </small>

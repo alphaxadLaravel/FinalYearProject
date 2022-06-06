@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\FieldController;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,6 +58,8 @@ Route::get('/add_company', function () {
     return view('hod.add_company');
 });
 
+// 
+
 // Browse companies route
 Route::get('/browse_companies', function () {
     return view('common.browse_company');
@@ -66,6 +69,8 @@ Route::get('/browse_companies', function () {
 Route::get('/self_allocate', function () {
     return view('student.self_allocate');
 });
+Route::post('/igot_field',[FieldController::class,'selfAllocate']);
+
 
 // Welcome Letter route
 Route::get('/welcome_letter', function () {
