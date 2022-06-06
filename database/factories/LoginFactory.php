@@ -17,8 +17,7 @@ class LoginFactory extends Factory
     public function definition()
     {
         return [
-            // 'pf_regNumber'=>$this->faker->unique()->bothify('IMC/???/#######'),
-            'pf_regNumber'=>\App\Models\Staff::all()->distinct()->pfNumber,
+            'pf_regNumber'=>$this->faker->unique()->bothify('IMC/???/#######'),
             'password' => $this->faker->unique()->bothify('####'),
             'status' => $this->faker->randomElement(['student','hod','supervisor']),
         ];

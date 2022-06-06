@@ -117,7 +117,7 @@
                 <i class="mdi mdi-dots-vertical"></i>
               </button>
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt3" style="">
-                <a class="dropdown-item" href="javascript:void(0);">View All</a>
+                <a class="dropdown-item" href="/all_students">View All</a>
               </div>
             </div>
            </div>
@@ -132,14 +132,16 @@
                   </tr>
                 </thead>
                 <tbody class="table-border-bottom-0">
-                  @for ($i = 0; $i < 4; $i++)
-                  <tr>
-                    <td><i class="mdi mdi-account-box-outline"></i><strong>IMC/BIT/1912158</strong></td>
-                    <td>Alpha Jozee</td>
-                    <td>BIT</td>
-                    <td>2nd Year</td>
-                  </tr>
-                  @endfor
+                  @if (session()->get('user')['status'] == "hod")
+                    @foreach ($sample as $student)
+                      <tr>
+                        <td><i class="mdi mdi-account-box-outline"></i><strong>{{$student->regNumber}}</strong></td>
+                        <td>{{$student->firstname." ".$student->lastname." ".$student->lastname}}</td>
+                        <td>{{$student->course->course}}</td>
+                        <td>{{$student->year." Year"}}</td>
+                      </tr>
+                    @endforeach
+                  @endif
                 </tbody>
               </table>
             </div>

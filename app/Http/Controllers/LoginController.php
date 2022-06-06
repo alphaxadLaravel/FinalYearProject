@@ -29,18 +29,16 @@ class LoginController extends Controller
         }
         elseif($check->status == "hod" || $check->status == "student" || $check->status == "supervisor"){
 
-            if($check->status == "hod"){
+            // if($check->status == "hod"){
 
-                $hod = Staff::where(['pfNumber'=>request()->regNumber])->first();
+            //     $hod = Staff::where(['pfNumber'=>request()->regNumber])->first();
 
-                // dd($hod);
-
-                request()->session()->put('hod',$hod);
-                request()->session()->put('user',$check);
-                return redirect('/dashboard');
-            }
-
-
+            //     request()->session()->put('hod',$hod);
+            //     request()->session()->put('user',$check);
+            //     return redirect('/dashboard');
+            // }
+            request()->session()->put('user',$check);
+            return redirect('/dashboard');
         }
 
 

@@ -25,5 +25,15 @@ class DatabaseSeeder extends Seeder
             'password' => '123',
             'status' => 'student'
         ]);
+        \App\Models\Login::factory()->create([
+            'pf_regNumber' => 'IMC/555',
+            'password' => '555',
+            'status' => 'hod'
+        ]);
+        \App\Models\Login::factory()->create([
+            'pf_regNumber' => 'IMC/000',
+            'password' => '000',
+            'status' => 'supervisor'
+        ]);
     }
 }

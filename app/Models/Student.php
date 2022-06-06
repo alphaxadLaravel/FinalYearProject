@@ -24,4 +24,9 @@ class Student extends Model
         'phoneNumber',
         'status',
     ];
+
+    // Student belongd to a course
+    public function course(){
+        return $this->belongsTo(Course::class);
+    }
 }
