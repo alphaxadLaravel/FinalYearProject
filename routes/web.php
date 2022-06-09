@@ -6,6 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\FieldController;
 use App\Http\Controllers\CommentsController;
 use App\Http\Controllers\LogbookController;
+use App\Http\Controllers\WelcomeLetter;
 
 
 
@@ -76,10 +77,6 @@ Route::get('/self_allocate', function () {
 Route::post('/igot_field',[FieldController::class,'selfAllocate']);
 
 
-// Welcome Letter route
-Route::get('/welcome_letter', function () {
-    return view('student.welcome_letter');
-});
 
 // Route to create a commnt page
 Route::get('/comment', function () {
@@ -117,3 +114,12 @@ Route::get('/logbook_preview', function () {
 Route::get('/profile', function () {
     return view('common.profile');
 });
+
+// Uploading the Letters route here
+Route::post('/upload',[WelcomeLetter::class,'upload']);
+
+// show welcome letter
+Route::get('/welcome_letter',[WelcomeLetter::class,'showLetter']);
+
+// doenload welcome letter
+Route::get('/downloadWelcome',[WelcomeLetter::class,'downloadWelcome']);

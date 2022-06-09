@@ -29,8 +29,9 @@
       </div>
     </div>
   </div>
-  @endif
-  @if (session()->get('user')['status'] == "hod")
+@endif
+
+@if (session()->get('user')['status'] == "hod")
 <h5 class="fw-bold py-3 mb-2"><span class="text-muted fw-light">HOD /</span> Welcome Letter</h5>
 
   <div class="nav-align-top mb-4">
@@ -48,15 +49,15 @@
     </ul>
     <div class="tab-content">
       <div class="tab-pane fade active show" id="navs-top-home" role="tabpanel">
-        <form action="/add_company" method="POST">
+        <form action="/upload" method="POST" enctype="multipart/form-data">
             @csrf
            <div class="row mb-3">
                   <div class="col-md-4 mb-2">
                     <label for="" class="text-muted mb-1">Purpose </label>
                     <select id="smallSelect" name="purpose" class="form-select ">
                       <option value="">Select Purpose..</option>
-                      <option value="mwanza">Welcome Letter</option>
-                      <option value="mwanza">Application Letter</option>
+                      <option value="Welcome Letter">Welcome Letter</option>
+                      <option value="Application Letter">Application Letter</option>
                   </select>
                     <small class="text-danger">
                         @error('purpose')
@@ -66,9 +67,9 @@
                 </div>
                 <div class="col-md-4 mb-2">
                     <label for="" class="text-muted mb-1">Attach Letter </label>
-                    <input type="file" class="form-control" name="company" id="" aria-describedby="helpId" placeholder="Enter Company name...">
+                    <input type="file" class="form-control" name="file" id="" aria-describedby="helpId" placeholder="Enter Company name...">
                     <small class="text-danger">
-                        @error('company')
+                        @error('file')
                             {{$message}}
                         @enderror
                     </small>
@@ -84,9 +85,10 @@
         </form>
     </div>
       <div class="tab-pane fade" id="navs-top-profile" role="tabpanel">
-      <p> You can Edit the Letters by uploading Again!</p>
-        <a href="#" class="btn btn-outline-primary mt-3"> Welcome Letter <i class="mdi mdi-eye"></i></a>
-        <a href="#" class="btn btn-outline-primary mt-3"> Application Letter <i class="mdi mdi-eye"></i></a>
+          <p> You can Update the Letters by uploading Again!</p>
+      
+          <a href="/downloadWelcome" class="btn btn-outline-primary mt-3"> Welcome Letter <i class="mdi mdi-eye"></i></a>
+          <a href="#" class="btn btn-outline-primary mt-3"> Application Letter <i class="mdi mdi-eye"></i></a>
       </div>
     </div>
   </div>

@@ -1,0 +1,83 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Models\Document;
+use App\Http\Controllers\Response;
+use Session;
+class WelcomeLetter extends Controller
+{
+    public function upload(Request $request){
+       
+        request()->validate([
+            'file' => 'required|mimes:pdf,jpg|max:2048',
+            'purpose' => 'required',
+        ]);
+
+        $user_id = Session::get('user')['id'];
+        $faculty_id = Session::get('user')['faculty_id'];
+        // $data = Document::where('faculty_id', '=', $faculty_id)->get();
+        $data = Document::where('faculty_id', '=', $faculty_id)->where('purpose', '=', request('purpose'))->first();
+        
+        if($data){
+
+            $fileName = time().'.'.request('file')->extension();  
+
+            request('file')->move(public_path('documents'), $fileName);
+    
+            $path = 'public/documents/'.$fileName;
+
+            Document::where('id',$data->id)->update([
+                'path'=>$path
+            ]);
+
+            session()->flash('updated', 'Updated successfulyy!!');
+
+            return "Updated";
+
+        }else{
+            
+            $fileName = time().'.'.request('file')->extension();  
+
+            request('file')->move(public_path('documents'), $fileName);
+    
+            $path = 'public/documents/'.$fileName;
+
+            Document::Create([
+                'user_id' => $user_id,
+                'faculty_id' => $faculty_id,
+                'purpose'=>request('purpose'),
+                'path'=>$path
+            ]);
+
+            session()->flash('uploaded', 'file uploaded successfulyy!!');
+            return "Added New";
+        }
+    }
+
+    public function showLetter(){
+        
+        $faculty_id = Session::get('user')['faculty_id'];
+        $welcome = Document::where('faculty_id', '=', $faculty_id)->where('purpose', '=', 'Welcome Letter')->get();
+        $application = Document::where('faculty_id', '=', $faculty_id)->where('purpose', '=', 'Application Letter')->first();
+
+        return view('student.welcome_letter', [
+            'welcome'=>$welcome,
+            'application'=>$application,
+        ]);
+
+    }
+
+    public function downloadWelcome(){
+        $faculty_id = Session::get('user')['faculty_id'];
+
+        $file = Document::where('faculty_id', '=', $faculty_id)->where('purpose', '=', 'Welcome Letter')->first();
+        return response()->download(public_path('documents/1654801981.jpg'));
+        
+        // return Response::download('documents/1654795397.pdf');
+        // return response()->download('public/documents/1654795397.pdf');
+        // return response()->download('public/documents/1654795397.pdf');
+    }
+    
+}
