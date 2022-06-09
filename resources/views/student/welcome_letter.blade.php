@@ -85,8 +85,8 @@
     </div>
       <div class="tab-pane fade" id="navs-top-profile" role="tabpanel">
       <p> You can Edit the Letters by uploading Again!</p>
-        <a href="#" class="btn btn-outline-primary "> Welcome Letter <i class="mdi mdi-eye"></i></a>
-        <a href="#" class="btn btn-outline-primary "> Application Letter <i class="mdi mdi-eye"></i></a>
+        <a href="#" class="btn btn-outline-primary mt-3"> Welcome Letter <i class="mdi mdi-eye"></i></a>
+        <a href="#" class="btn btn-outline-primary mt-3"> Application Letter <i class="mdi mdi-eye"></i></a>
       </div>
     </div>
   </div>
