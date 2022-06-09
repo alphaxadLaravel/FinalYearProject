@@ -11,7 +11,7 @@ class WelcomeLetter extends Controller
     public function upload(Request $request){
        
         request()->validate([
-            'file' => 'required|mimes:pdf,jpg|max:2048',
+            'file' => 'required|mimes:pdf|max:2048',
             'purpose' => 'required',
         ]);
 
@@ -42,7 +42,7 @@ class WelcomeLetter extends Controller
 
             request('file')->move(public_path('documents'), $fileName);
     
-            $path = 'public/documents/'.$fileName;
+            $path = 'documents/'.$fileName;
 
             Document::Create([
                 'user_id' => $user_id,
@@ -59,7 +59,7 @@ class WelcomeLetter extends Controller
     public function showLetter(){
         
         $faculty_id = Session::get('user')['faculty_id'];
-        $welcome = Document::where('faculty_id', '=', $faculty_id)->where('purpose', '=', 'Welcome Letter')->get();
+        $welcome = Document::where('faculty_id', '=', $faculty_id)->where('purpose', '=', 'Welcome Letter')->first();
         $application = Document::where('faculty_id', '=', $faculty_id)->where('purpose', '=', 'Application Letter')->first();
 
         return view('student.welcome_letter', [
@@ -73,11 +73,15 @@ class WelcomeLetter extends Controller
         $faculty_id = Session::get('user')['faculty_id'];
 
         $file = Document::where('faculty_id', '=', $faculty_id)->where('purpose', '=', 'Welcome Letter')->first();
-        return response()->download(public_path('documents/1654801981.jpg'));
+        return response()->download(public_path($file->path));
         
-        // return Response::download('documents/1654795397.pdf');
-        // return response()->download('public/documents/1654795397.pdf');
-        // return response()->download('public/documents/1654795397.pdf');
+    }
+
+    public function downloadApplication(){
+        $faculty_id = Session::get('user')['faculty_id'];
+
+        $file = Document::where('faculty_id', '=', $faculty_id)->where('purpose', '=', 'Welcome Letter')->first();
+        return response()->download(public_path($file->path));
     }
     
 }

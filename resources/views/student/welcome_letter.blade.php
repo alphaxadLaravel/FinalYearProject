@@ -85,10 +85,23 @@
         </form>
     </div>
       <div class="tab-pane fade" id="navs-top-profile" role="tabpanel">
-          <p> You can Update the Letters by uploading Again!</p>
-      
-          <a href="/downloadWelcome" class="btn btn-outline-primary mt-3"> Welcome Letter <i class="mdi mdi-eye"></i></a>
-          <a href="#" class="btn btn-outline-primary mt-3"> Application Letter <i class="mdi mdi-eye"></i></a>
+          @if ($welcome || $application)
+            <p> You can Update the Letters by uploading Again!</p>
+
+            @if ($welcome)
+              <a href="/download_welcome_letter" class="btn btn-outline-primary mt-3"> Welcome Letter <i class="mdi mdi-eye"></i></a>
+            @endif
+
+            @if ($application)
+            <a href="/download_application_letter" class="btn btn-outline-primary mt-3"> Application Letter <i class="mdi mdi-eye"></i></a>
+            @endif
+            
+          @else
+          <div class="d-flex justify-content-center flex-column align-items-center">
+              <img src="{{asset('images/no.gif')}}" height="200px" width="200px" alt="">
+              <p class="text-muted">No Any Letters to Download!</p>
+          </div>
+          @endif
       </div>
     </div>
   </div>

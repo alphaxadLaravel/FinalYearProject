@@ -122,4 +122,7 @@ Route::post('/upload',[WelcomeLetter::class,'upload']);
 Route::get('/welcome_letter',[WelcomeLetter::class,'showLetter']);
 
 // doenload welcome letter
-Route::get('/downloadWelcome',[WelcomeLetter::class,'downloadWelcome']);
+Route::get('/download_welcome_letter',[WelcomeLetter::class,'downloadWelcome']);
+
+// Download the application letter
+Route::get('/download_application_letter',[WelcomeLetter::class,'downloadApplication']);
