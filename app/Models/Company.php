@@ -5,16 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Comment extends Model
+class Company extends Model
 {
     use HasFactory;
-    protected $table = "comments";
-
+    protected $table = "companies";
+    
     protected $fillable = [
-        'student_id',
-        'reason',
-        'comment',
+        'faculty_id',
+        'company',
+        'link',
+        'email',
+        'bio',
         'status',
-        'faculty_id'
     ];
 }

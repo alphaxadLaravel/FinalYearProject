@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('user_id')->unsigned()->nullable();
             $table->bigInteger('course_id')->unsigned()->nullable();
+            $table->string('IDNumber')->unique();
             $table->string('firstname');
             $table->string('middlename');
             $table->string('lastname');
@@ -24,10 +25,14 @@ return new class extends Migration
             $table->string('email');
             $table->string('year');
             $table->string('level');
+            $table->bigInteger('faculty_id')->unsigned();
             $table->string('status')->default('active');
             $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('faculty_id')->references('id')->on('faculties')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
+            
+            
         });
     }
 

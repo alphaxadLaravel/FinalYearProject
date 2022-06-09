@@ -13,11 +13,11 @@ class StudentFactory extends Factory
      * Define the model's default state.
      *
      * @return array<string, mixed>
-     */
+    */
     public function definition()
     {
         return [
-            'user_id' => \App\Models\User::all()->where('status','=','student')->random()->id,
+            'user_id' => \App\Models\User::all()->where('status','=','student')->unique()->id,
             'firstname' => $this->faker->firstname(),
             'middlename'=> $this->faker->firstname(),
             'lastname'=> $this->faker->lastname(),

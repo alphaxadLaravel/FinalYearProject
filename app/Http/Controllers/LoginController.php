@@ -21,14 +21,17 @@ class LoginController extends Controller
 
         // checking and redirect users to their dashboard
 
-        if(!$check || !$check->password == request()->password){
-
+        if($check->password != request()->password || !$check){
+            
             session()->flash('none','');
             return redirect('/');
-
         }
         elseif($check->status == "hod" || $check->status == "student" || $check->status == "supervisor"){
 
+            if($check->status == "hod"){
+                request()->session()->put('user',$check);
+                return redirect('/dashboard');
+            }
             request()->session()->put('user',$check);
             return redirect('/dashboard');
         }

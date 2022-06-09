@@ -15,6 +15,7 @@ class Student extends Model
         'user_id',
         'firstname',
         'midlename',
+        'IDNumber',
         'lastname',
         'course_id',
         'year',
@@ -27,5 +28,10 @@ class Student extends Model
     // Student belongd to a course
     public function course(){
         return $this->belongsTo(Course::class);
+    }
+
+    // Student belongd to user
+    public function user(){
+        return $this->belongsTo(User::class);
     }
 }

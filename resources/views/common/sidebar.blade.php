@@ -30,7 +30,12 @@
         </a>
 
         <ul class="menu-sub">
-         
+          <li class="menu-item">
+            <a href="/welcome_letter" class="menu-link">
+              <div data-i18n="Without menu">Field Letters</div>
+            </a>
+          </li>
+
           @if (session()->get('user')['status'] == "student")
             <li class="menu-item">
               <a href="/self_allocate" class="menu-link">
@@ -38,11 +43,6 @@
               </a>
             </li>
           @endif
-          <li class="menu-item">
-            <a href="/welcome_letter" class="menu-link">
-              <div data-i18n="Without menu">Welcome Letter</div>
-            </a>
-          </li>
 
           @if(session()->get('user')['status'] == "hod")
             <li class="menu-item">
@@ -50,11 +50,14 @@
                 <div data-i18n="Without navbar">Allocations</div>
               </a>
             </li>
-            <li class="menu-item">
-              <a href="/field_arrival" class="menu-link">
-                <div data-i18n="Without menu">Field Arrival</div>
-              </a>
-            </li>
+            
+          @endif
+          @if(session()->get('user')['status'] == "supervisor")
+          <li class="menu-item">
+            <a href="/field_arrival" class="menu-link">
+              <div data-i18n="Without menu">Field Arrival</div>
+            </a>
+          </li>
           @endif
         </ul>
       </li>

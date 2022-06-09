@@ -41,7 +41,7 @@
           <th>Students</th>
           <th>Email</th>
           <th>Phone Number</th>
-          <th>Actions</th>
+          <th>View</th>
         </tr>
       </thead>
       <tbody class="table-border-bottom-0">
@@ -50,7 +50,7 @@
           <td><i class="mdi mdi-account-box-outline fa-lg text-danger me-3"></i> <strong>PF/1000</strong></td>
           <td>Dr.Msury Mahunnah</td>
           <td>
-            <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
+            {{-- <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
                 <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-xs pull-up" title="" data-bs-original-title="Lilian Fuller">
                   <img src="{{asset('images/alpha.jpg')}}" alt="Avatar" class="rounded-circle">
                 </li>
@@ -60,12 +60,13 @@
                 <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-xs pull-up" title="" data-bs-original-title="Christina Parker">
                   <img src="{{asset('images/alpha.jpg')}}" alt="Avatar" class="rounded-circle">
                 </li>
-            </ul>
+            </ul> --}}
+            <span class="fw-bold">5 Students</span>
           </td>
           <td>msurry@gmail.com</td>
           <td>+255-743-196-599</td>
           <td>
-            <a href="#"><span class="badge bg-label-primary me-1"><i class="mdi mdi-eye"></i></span></a>
+            <a href="/profile"><span class="badge bg-label-primary me-1"><i class="mdi mdi-eye"></i></span></a>
           </td>
         </tr>
         @endfor

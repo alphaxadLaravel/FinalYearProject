@@ -86,12 +86,12 @@
               <span class="fw-semibold d-block mb-1"><i class="mdi mdi-calendar "></i>Days left</span>
               @elseif(session()->get('user')['status'] == "hod")
               <span class="fw-semibold d-block mb-1"><i class="mdi mdi-account-network "></i>Supervisors</span>
+              <h3 class="card-title mb-2 ">{{$supervisor}}</h3>
               @elseif(session()->get('user')['status'] == "supervisor")
               <span class="fw-semibold d-block mb-1"><i class="mdi mdi mdi-message-video"></i>Assesments</span>
               
               @endif
 
-              <h3 class="card-title mb-2 ">4</h3>
             </div>
           </div>
         </a>
@@ -128,17 +128,15 @@
                     <th>Reg No</th>
                     <th>Fullname</th>
                     <th>Course</th>
-                    <th>Level</th>
                   </tr>
                 </thead>
                 <tbody class="table-border-bottom-0">
                   @if (session()->get('user')['status'] == "hod")
                     @foreach ($sample as $student)
                       <tr>
-                        <td><i class="mdi mdi-account-box-outline"></i><strong>{{$student->regNumber}}</strong></td>
+                        <td><i class="mdi mdi-account-box-outline"></i><strong>{{$student->IDNumber}}</strong></td>
                         <td>{{$student->firstname." ".$student->lastname." ".$student->lastname}}</td>
                         <td>{{$student->course->course}}</td>
-                        <td>{{$student->year." Year"}}</td>
                       </tr>
                     @endforeach
                   @endif
@@ -158,11 +156,10 @@
               <div class="card-body">
               @if (session()->get('user')['status'] == "hod" || session()->get('user')['status'] == "student")
                 <span class="fw-semibold d-block mb-1"><i class="mdi mdi-garage "></i>Companies</span>
+                <h3 class="card-title mb-2 ">0</h3>
               @elseif(session()->get('user')['status'] == "supervisor")
               <span class="fw-semibold d-block mb-1"><i class="mdi mdi-cloud-upload "></i>Uploads</span>
               @endif
-
-                <h3 class="card-title mb-2 ">5</h3>
               </div>
             </div>
           </a>
@@ -174,8 +171,10 @@
                 {{-- Student will see comments made by him/her --}}
                 {{-- supervisor will see the comments made by his/her students --}}
                 {{-- The HOD will comments of all students --}}
+                @if (session()->get('user')['status'] == "hod" || session()->get('user')['status'] == "supervisor" || session()->get('user')['status'] == "student")
                 <span class="fw-semibold d-block mb-1"><i class="mdi mdi-comment-multiple-outline "></i>Comments</span>
-                <h3 class="card-title mb-2 ">3</h3>
+                <h3 class="card-title mb-2 ">0</h3>
+                @endif
               </div>
             </div>
           </a>

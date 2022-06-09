@@ -14,34 +14,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\Faculty::factory(10)->create();
-        \App\Models\Course::factory(10)->create();
-        \App\Models\User::factory(10)->create();
-
-        \App\Models\User::factory()->create([
-            'IDNumber' => 'IMC/123',
-            'password' => '123',
-            'faculty_id' => \App\Models\Faculty::all()->random()->id,
-            'status' => 'student'
-        ]);
-        \App\Models\User::factory()->create([
-            'IDNumber' => 'IMC/555',
-            'password' => '55',
-            'faculty_id' => \App\Models\Faculty::all()->random()->id,
-            'status' => 'hod'
-        ]);
-        \App\Models\User::factory()->create([
-            'IDNumber' => 'IMC/000',
-            'password' => '000',
-            'faculty_id' => \App\Models\Faculty::all()->random()->id,
-            'status' => 'supervisor'
-        ]);
-
-        
-        \App\Models\Student::factory(10)->create();
-        \App\Models\Staff::factory(10)->create();
+      
         $this->call(RegionsTableSeeder::class);
         $this->call(DistrictsTableSeeder::class);
         $this->call(WardsTableSeeder::class);
+        $this->call(FacultiesTableSeeder::class);
+        $this->call(CoursesTableSeeder::class);
+        $this->call(UsersTableSeeder::class);
+        $this->call(StudentsTableSeeder::class);
+        $this->call(StaffTableSeeder::class);
     }
 }

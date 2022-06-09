@@ -3,7 +3,7 @@
         <div class="card-body ">
           <div class="row">
               <div class="col-md-6 d-flex justify-content-center">
-               <img src="{{asset('images/fill.gif')}}"  height="300px" alt="">
+               <img src="{{asset('images/fill.gif')}}"  height="350px" alt="">
               </div>
               <div class="col-md-6">
                   
@@ -20,22 +20,42 @@
                                   @enderror
                               </small>
                           </div>
-                            <div class="col-md-6">
-                                <label for="" class="text-muted mb-2">Region<span class="text-muted"><span class="text-danger">*</span></label>
-                                <select id="smallSelect" wire:model="region" class="form-select ">
-                                    <option value="">Select Region..</option>
-                                    @foreach ($getRegion as $mkoa)
-                                    <option value="{{$mkoa->id}}">{{$mkoa->region}}</option>
-                                    @endforeach
-                                </select>
+                          <div class="col-md-6">
+                            <label for="" class="text-muted mb-2">Department Name<span class="text-muted"><span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" wire:model="department" id="" aria-describedby="helpId" placeholder="Enter Company name...">
                                 <small class="text-danger">
-                                    @error('region')
+                                    @error('department')
                                         {{$message}}
                                     @enderror
                                 </small>
-                            </div>
+                          </div>
+                            
                       </div>
-                      
+                      <div class="row mb-3">
+                        <div class="col-md-6 mb-2">
+                            <label for="" class="text-muted mb-2">Upload Signed Welcome Letter <span class="text-danger">* </span> </label>
+                            <input type="file" class="form-control" wire:model="letter" id="" aria-describedby="helpId" placeholder="Enter Company name...">
+                            <small class="text-danger">
+                                @error('letter')
+                                    {{$message}}
+                                @enderror
+                            </small>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="" class="text-muted mb-2">Region<span class="text-muted"><span class="text-danger">*</span></label>
+                            <select id="smallSelect" wire:model="region" class="form-select ">
+                                <option value="">Select Region..</option>
+                                @foreach ($getRegion as $mkoa)
+                                <option value="{{$mkoa->id}}">{{$mkoa->region}}</option>
+                                @endforeach
+                            </select>
+                            <small class="text-danger">
+                                @error('region')
+                                    {{$message}}
+                                @enderror
+                            </small>
+                        </div>
+                      </div>
                       <div class="row mb-3">
                         <div class="col-md-6 ">
                             <label for="" class="text-muted mb-2">District<span class="text-muted"><span class="text-danger">*</span></label>

@@ -52,7 +52,7 @@
           <td>Mwanza</td>
           <td><a href="#" class="text-muted btn btn-sm">Dowload Letter <span class="badge bg-label-primary me-1"><i class="mdi mdi-download"></i></span></a></td>
           <td>
-            <a href="#"><span class="badge bg-label-primary me-1"><i class="mdi mdi-eye"></i></span></a>
+            <a href="/profile"><span class="badge bg-label-primary me-1"><i class="mdi mdi-eye"></i></span></a>
           </td>
         </tr>
         @endfor

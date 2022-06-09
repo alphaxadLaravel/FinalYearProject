@@ -112,3 +112,8 @@ Route::post('/fillLogbook', [LogbookController::class,'fillLogbook']);
 Route::get('/logbook_preview', function () {
     return view('common.logbook_preview');
 });
+
+// Student Profile
+Route::get('/profile', function () {
+    return view('common.profile');
+});

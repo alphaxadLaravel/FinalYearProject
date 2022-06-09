@@ -41,7 +41,7 @@
           <th>Region</th>
           <th>District</th>
           <th>Ward</th>
-          <th>Actions</th>
+          <th>View</th>
         </tr>
       </thead>
       <tbody class="table-border-bottom-0">
@@ -54,12 +54,16 @@
           <td>Nyamagana</td>
           <td>Nyegezi</td>
           <td>
-            <a href="#"><span class="badge bg-label-primary me-1"><i class="mdi mdi-eye"></i></span></a>
+            <a href="/profile"><span class="badge bg-label-primary me-1"><i class="mdi mdi-eye"></i></span></a>
           </td>
         </tr>
         @endfor
       </tbody>
     </table>
+        {{-- <div class="d-flex justify-content-center flex-column align-items-center">
+            <img src="{{asset('images/no.gif')}}" height="200px" width="200px" alt="">
+            <p class="text-muted">No Data To Display!!</p>
+        </div> --}}
     
   </div>
 </div>

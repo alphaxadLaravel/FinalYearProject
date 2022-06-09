@@ -16,13 +16,15 @@ return new class extends Migration
         Schema::create('staff', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('user_id')->unsigned()->nullable();
+            $table->bigInteger('faculty_id')->unsigned();
             $table->string('firstname');
-            $table->string('midlename');
+            $table->string('middlename');
             $table->string('lastname');
             $table->string('email');
             $table->string('phone');
             $table->string('status')->default('active');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('faculty_id')->references('id')->on('faculties')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }
