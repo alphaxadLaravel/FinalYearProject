@@ -116,6 +116,11 @@
               <div data-i18n="Container">Add New</div>
             </a>
           </li>
+          <li class="menu-item">
+            <a href="/add_company" class="menu-link">
+              <div data-i18n="Container">Manage </div>
+            </a>
+          </li>
           @endif
           <li class="menu-item">
             <a href="/browse_companies" class="menu-link">

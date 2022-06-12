@@ -56,7 +56,7 @@
                 <div class="row mb-3">
                     <div class="col-md-12">
                         <label for="" class="text-muted mb-1">About the Company!</label>
-                        <textarea class="form-control" name="bio" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea class="form-control" name="bio" id="exampleFormControlTextarea1" rows="2"></textarea>
                         <small class="text-danger">
                             @error('bio')
                                 {{$message}}
