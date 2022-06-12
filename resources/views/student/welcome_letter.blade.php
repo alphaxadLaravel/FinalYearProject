@@ -19,21 +19,51 @@
     </ul>
     <div class="tab-content">
       <div class="tab-pane fade " id="navs-top-home" role="tabpanel">
-        <p><span class="text-danger">* </span> Download the Welcome letter and Provide it to yur indtructor to sign!</p>
-        <a href="#" class="btn btn-outline-primary ">Download Welcome Letter <i class="mdi mdi-download"></i></a>
+          @if ($welcome)
+              <p><span class="text-danger">* </span> Download the Welcome letter and Provide it to yur indtructor to sign!</p>
+              <a href="/download_welcome_letter" class="btn btn-outline-primary ">Download Welcome Letter <i class="mdi mdi-download"></i></a>
+          @else
+            <div class="d-flex justify-content-center flex-column align-items-center">
+                <img src="{{asset('images/no.gif')}}" height="200px" width="200px" alt="">
+                <p class="text-muted">No Welcome Letter to Download!</p>
+            </div>
+          @endif
+        </div>
+
+          <div class="tab-pane fade active show" id="navs-top-profile" role="tabpanel">
+          @if ($application)
+              <p><span class="text-danger">* </span> Download the Application Letter and Apply to companies!</p>
+            <a href="/download_application_letter" class="btn btn-outline-primary ">Download Application Letter <i class="mdi mdi-download"></i></a>
+          @else
+            <div class="d-flex justify-content-center flex-column align-items-center">
+                <img src="{{asset('images/no.gif')}}" height="200px" width="200px" alt="">
+                <p class="text-muted">No Application Letters to Download!</p>
+            </div>
+          @endif
+        </div>
+
     
-      </div>
-      <div class="tab-pane fade active show" id="navs-top-profile" role="tabpanel">
-          <p><span class="text-danger">* </span> Download the Application Letter and Apply to companies!</p>
-        <a href="#" class="btn btn-outline-primary ">Download Application Letter <i class="mdi mdi-download"></i></a>
-      </div>
+      
+
+      
     </div>
   </div>
 @endif
 
 @if (session()->get('user')['status'] == "hod")
 <h5 class="fw-bold py-3 mb-2"><span class="text-muted fw-light">HOD /</span> Welcome Letter</h5>
-
+@if (Session::has('uploaded'))
+<div class="alert alert-success alert-dismissible" role="alert">
+  Letter have been uploaded Successfully!!!
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+@endif
+@if (Session::has('updated'))
+<div class="alert alert-success alert-dismissible" role="alert">
+  Letter have been updated Successfully!!!
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+@endif
   <div class="nav-align-top mb-4">
     <ul class="nav nav-tabs" role="tablist">
       <li class="nav-item">
@@ -95,7 +125,7 @@
             @if ($application)
             <a href="/download_application_letter" class="btn btn-outline-primary mt-3"> Application Letter <i class="mdi mdi-eye"></i></a>
             @endif
-            
+
           @else
           <div class="d-flex justify-content-center flex-column align-items-center">
               <img src="{{asset('images/no.gif')}}" height="200px" width="200px" alt="">

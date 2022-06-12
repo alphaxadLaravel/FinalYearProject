@@ -25,16 +25,21 @@ class SelfAllocate extends Component
     public function selfAllocate(){
         $this->validate([
             'company'=>'required|string|min:3|max:30',
+            'department'=>'required|string|min:3|max:25',
+            'file' => 'required|mimes:pdf|max:2048',
             'region'=>'required',
             'district'=>'required',
             'ward'=>'required',
         ]);
 
         $studentID = Session::get('user')['id'];
+        $data = Field::where('student_id', '=', $studentID)->first();
 
         Field::Create([
             'student_id'=>$studentID,
             'company'=>$this->company,
+            'department'=>$this->department,
+            'file'=>$this->file,
             'region_id'=>$this->region,
             'distict_id'=>$this->district,
             'ward_id'=>$this->ward,

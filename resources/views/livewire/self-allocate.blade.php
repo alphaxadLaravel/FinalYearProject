@@ -7,7 +7,7 @@
               </div>
               <div class="col-md-6">
                   
-                  <form action="" wire:submit.prevent="selfAllocate" method="POST">
+                  <form action="" wire:submit.prevent="selfAllocate" enctype="multipart/form-data" method="POST">
                       @csrf
                       <span class=""><span class="text-danger">*</span class="fw-bold"> Provide the Details of your Field Area!</span>
                       <div class="row mb-3 mt-3">
@@ -34,9 +34,9 @@
                       <div class="row mb-3">
                         <div class="col-md-6 mb-2">
                             <label for="" class="text-muted mb-2">Upload Signed Welcome Letter <span class="text-danger">* </span> </label>
-                            <input type="file" class="form-control" wire:model="letter" id="" aria-describedby="helpId" placeholder="Enter Company name...">
+                            <input type="file" class="form-control" wire:model="file" id="" aria-describedby="helpId" placeholder="Enter Company name...">
                             <small class="text-danger">
-                                @error('letter')
+                                @error('file')
                                     {{$message}}
                                 @enderror
                             </small>

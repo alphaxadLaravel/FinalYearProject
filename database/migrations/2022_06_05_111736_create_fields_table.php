@@ -17,6 +17,8 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('student_id')->unsigned()->nullable();
             $table->string('company');
+            $table->string('department');
+            $table->string('path');
             $table->bigInteger('region_id')->unsigned()->nullable();
             $table->bigInteger('ward_id')->unsigned()->nullable();
             $table->bigInteger('distict_id')->unsigned()->nullable();

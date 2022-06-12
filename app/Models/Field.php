@@ -13,6 +13,8 @@ class Field extends Model
     protected $fillable = [
         'student_id',
         'company',
+        'department',
+        'path',
         'region_id',
         'distict_id',
         'ward_id',

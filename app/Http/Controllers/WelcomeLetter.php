@@ -34,7 +34,7 @@ class WelcomeLetter extends Controller
 
             session()->flash('updated', 'Updated successfulyy!!');
 
-            return "Updated";
+            return redirect('/welcome_letter');
 
         }else{
             
@@ -52,7 +52,7 @@ class WelcomeLetter extends Controller
             ]);
 
             session()->flash('uploaded', 'file uploaded successfulyy!!');
-            return "Added New";
+            return redirect('/welcome_letter');
         }
     }
 
