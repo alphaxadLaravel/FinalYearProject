@@ -16,8 +16,22 @@ class Field extends Model
         'department',
         'path',
         'region_id',
-        'distict_id',
+        'district_id',
         'ward_id',
         'status',
     ];
+
+    // Field has many regions
+    public function region(){
+        return $this->belongsTo(Region::class);
+    }
+   // Field has many districts
+    public function district(){
+        return $this->belongsTo(District::class);
+    }
+
+    // Field has many wards
+    public function ward(){
+        return $this->belongsTo(Ward::class);
+    }
 }

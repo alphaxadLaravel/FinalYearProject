@@ -26,7 +26,7 @@ class WelcomeLetter extends Controller
 
             request('file')->move(public_path('documents'), $fileName);
     
-            $path = 'public/documents/'.$fileName;
+            $path = 'documents/'.$fileName;
 
             Document::where('id',$data->id)->update([
                 'path'=>$path

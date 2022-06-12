@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Livewire;
+use Livewire\WithFileUploads;
 
 use Livewire\Component;
 use App\Models\Field;
@@ -12,9 +13,16 @@ use Session;
 
 class SelfAllocate extends Component
 {
+    use WithFileUploads;
+
+    public $gotoUpdate;
+    public $allocated = true;
+
     public $company;
     public $region;
     public $district;
+    public $department;
+    public $letter;
     public $ward;
     public $remain = TRUE;
 
@@ -23,10 +31,10 @@ class SelfAllocate extends Component
     public $getWard;
 
     public function selfAllocate(){
-        $this->validate([
-            'company'=>'required|string|min:3|max:30',
-            'department'=>'required|string|min:3|max:25',
-            'file' => 'required|mimes:pdf|max:2048',
+        $data = $this->validate([
+            'company'=>'required|string|min:3|max:90',
+            'department'=>'required|string|min:3|max:90',
+            'letter' => 'required|mimes:pdf|max:2048',
             'region'=>'required',
             'district'=>'required',
             'ward'=>'required',
@@ -35,13 +43,15 @@ class SelfAllocate extends Component
         $studentID = Session::get('user')['id'];
         $data = Field::where('student_id', '=', $studentID)->first();
 
+        $data['letter'] = $this->letter->store('welcome_letters');
+
         Field::Create([
             'student_id'=>$studentID,
             'company'=>$this->company,
             'department'=>$this->department,
-            'file'=>$this->file,
+            'path'=>$data['letter'],
             'region_id'=>$this->region,
-            'distict_id'=>$this->district,
+            'district_id'=>$this->district,
             'ward_id'=>$this->ward,
         ]);
 
@@ -78,8 +88,19 @@ class SelfAllocate extends Component
         }
     }
 
+  
+
+    public function movetoUpdate(){
+        $this->gotoUpdate = true;
+        $this->allocated = false;
+    }
+
     public function render()
     {
-        return view('livewire.self-allocate');
+        
+        $studentID = Session::get('user')['id'];
+        $data = Field::where('student_id', '=', $studentID)->first();
+
+        return view('livewire.self-allocate',['data'=>$data,]);
     }
 }

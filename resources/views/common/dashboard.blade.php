@@ -84,12 +84,13 @@
             <div class="card-body">
               @if (session()->get('user')['status'] == "student")
               <span class="fw-semibold d-block mb-1"><i class="mdi mdi-calendar "></i>Days left</span>
+              <h3 class="card-title mb-2 ">60</h3>
               @elseif(session()->get('user')['status'] == "hod")
               <span class="fw-semibold d-block mb-1"><i class="mdi mdi-account-network "></i>Supervisors</span>
               <h3 class="card-title mb-2 ">{{$supervisor}}</h3>
               @elseif(session()->get('user')['status'] == "supervisor")
               <span class="fw-semibold d-block mb-1"><i class="mdi mdi mdi-message-video"></i>Assesments</span>
-              
+              <h3 class="card-title mb-2 ">3</h3>
               @endif
 
             </div>

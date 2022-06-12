@@ -19,9 +19,14 @@ class LoginController extends Controller
         // checking if user exist in database
         $check = User::where(['IDNumber'=>request()->regNumber])->first();
 
+
         // checking and redirect users to their dashboard
 
-        if($check->password != request()->password || !$check){
+        if(!$check){
+            
+            session()->flash('none','');
+            return redirect('/');
+        } if($check->password != request('password')){
             
             session()->flash('none','');
             return redirect('/');

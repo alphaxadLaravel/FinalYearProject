@@ -52,12 +52,12 @@
 
 @if (session()->get('user')['status'] == "hod")
 <h5 class="fw-bold py-3 mb-2"><span class="text-muted fw-light">HOD /</span> Welcome Letter</h5>
-@if (Session::has('uploaded'))
-<div class="alert alert-success alert-dismissible" role="alert">
-  Letter have been uploaded Successfully!!!
-  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
-@endif
+  @if (Session::has('uploaded'))
+  <div class="alert alert-success alert-dismissible" role="alert">
+    Letter have been uploaded Successfully!!!
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  @endif
 @if (Session::has('updated'))
 <div class="alert alert-success alert-dismissible" role="alert">
   Letter have been updated Successfully!!!
