@@ -1,7 +1,14 @@
 <div>
+    
     @if (Session::has('gotField'))
         <div class="alert alert-success alert-dismissible" role="alert">
         Allocation made Successfully!
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+    @if (Session::has('updatedAllocation'))
+        <div class="alert alert-success alert-dismissible" role="alert">
+        Allocation updated Successfully!
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     @endif
@@ -16,7 +23,7 @@
                 @if ($data)
                    
                     @if ($allocated)
-                        <h4 class="text-muted text-center">My Allocation Details</h4>
+                        <h5 class="text-muted text-center"><i class="mdi mdi-chart-gantt"></i> My Allocation Details</h5>
                         <span class=" fw-bold"> {{$data->company}}</span>
                         <p class="text-muted">Company: </p>
 
@@ -32,12 +39,11 @@
                         <span class=" fw-bold">{{$data->ward->ward}}</span>
                         <p class="text-muted">Ward: </p>
 
-                        <button class="btn btn-outline-primary w-100" wire:click="movetoUpdate">Update Details</button>
+                        <button class="btn btn-outline-primary w-100" wire:click="movetoUpdate"><i class="mdi mdi-account-edit"></i> Update Details</button>
                     @elseif ($gotoUpdate)
-                        {{$data->company}}
                         <form action="" wire:submit.prevent="updateAllocation" enctype="multipart/form-data" method="POST">
                             @csrf
-                            <span class=""><span class="text-danger">*</span class="fw-bold"> Update Details of your Field Area!</span>
+                            <span class=""> <i class="mdi mdi-pencil"></i> Update Details of your Field Area!</span>
                             <div class="row mb-3 mt-3">
                                 <div class="col-md-6 mb-2">
                                     <label for="" class="text-muted mb-2">Company Name<span class="text-muted"><span class="text-danger">*</span></label>
@@ -62,9 +68,9 @@
                             <div class="row mb-3">
                             <div class="col-md-6 mb-2">
                                 <label for="" class="text-muted mb-2">Upload Signed Welcome Letter <span class="text-danger">* </span> </label>
-                                <input type="file" class="form-control" wire:model="file" id="" aria-describedby="helpId" placeholder="Enter Company name...">
+                                <input type="file" class="form-control" wire:model="letter" id="" aria-describedby="helpId" placeholder="Enter Company name...">
                                 <small class="text-danger">
-                                    @error('file')
+                                    @error('letter')
                                         {{$message}}
                                     @enderror
                                 </small>
@@ -94,9 +100,6 @@
                                         <option value="{{$wilaya->id}}">{{$wilaya->district}}</option>
                                         @endforeach
                                     @endif
-        
-                                    
-                                    
                                 </select>
                                 <small class="text-danger">
                                     @error('district')

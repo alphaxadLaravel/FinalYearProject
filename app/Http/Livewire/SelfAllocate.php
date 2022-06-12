@@ -29,6 +29,44 @@ class SelfAllocate extends Component
     public $getRegion;
     public $getDistrict;
     public $getWard;
+    
+    // Update the user self allocation
+    public function updateAllocation(){
+        $data = $this->validate([
+            'company'=>'required|string|min:3|max:90',
+            'department'=>'required|string|min:3|max:90',
+            'letter' => 'required|mimes:pdf|max:2048',
+            'region'=>'required',
+            'district'=>'required',
+            'ward'=>'required',
+        ]);
+        
+        $studentID = Session::get('user')['id'];
+        $data = Field::where('student_id', '=', $studentID)->first();
+
+        $data['letter'] = $this->letter->store('welcome_letters');
+
+        Field::where('id', $data->id)->update([
+            'company'=>$this->company,
+            'department'=>$this->department,
+            'path'=>$data['letter'],
+            'region_id'=>$this->region,
+            'district_id'=>$this->district,
+            'ward_id'=>$this->ward,
+        ]);
+
+        $this->company = "";
+        $this->region = "";
+        $this->district = "";
+        $this->department = "";
+        $this->letter = "";
+        $this->ward = "";
+
+        session()->flash('updatedAllocation','');
+
+        // redirect to login here
+        return redirect('/self_allocate');
+    }
 
     public function selfAllocate(){
         $data = $this->validate([
@@ -41,7 +79,7 @@ class SelfAllocate extends Component
         ]);
 
         $studentID = Session::get('user')['id'];
-        $data = Field::where('student_id', '=', $studentID)->first();
+        $student_faculty = Session::get('user')['faculty_id'];
 
         $data['letter'] = $this->letter->store('welcome_letters');
 
@@ -53,11 +91,14 @@ class SelfAllocate extends Component
             'region_id'=>$this->region,
             'district_id'=>$this->district,
             'ward_id'=>$this->ward,
+            'faculty_id'=>$student_faculty,
         ]);
 
         $this->company = "";
         $this->region = "";
         $this->district = "";
+        $this->department = "";
+        $this->letter = "";
         $this->ward = "";
 
         session()->flash('gotField','');
@@ -88,11 +129,19 @@ class SelfAllocate extends Component
         }
     }
 
-  
-
+    // Move to the update form here
     public function movetoUpdate(){
+
+        
+        $studentID = Session::get('user')['id'];
+        $data = Field::where('student_id', '=', $studentID)->first();
+
         $this->gotoUpdate = true;
         $this->allocated = false;
+
+        $this->company = $data->company;
+        $this->department = $data->department;
+          
     }
 
     public function render()

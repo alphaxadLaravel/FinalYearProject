@@ -19,12 +19,14 @@ class Field extends Model
         'district_id',
         'ward_id',
         'status',
+        'faculty_id',
     ];
 
     // Field has many regions
     public function region(){
         return $this->belongsTo(Region::class);
     }
+
    // Field has many districts
     public function district(){
         return $this->belongsTo(District::class);
@@ -33,5 +35,9 @@ class Field extends Model
     // Field has many wards
     public function ward(){
         return $this->belongsTo(Ward::class);
+    }
+
+    public function student(){
+        return $this->belongsTo(Student::class);
     }
 }

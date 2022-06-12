@@ -2,7 +2,8 @@
 @section('title', "Welcome Letter - IFM Field Management System")
 @section('system')
 
-<h5 class="fw-bold py-3 mb-2"><span class="text-muted fw-light">HOD /</span> Student Profile</h5>
+  <h5 class="fw-bold py-3 mb-2"><a href="/allocations" class="text-primary"><i class="mdi mdi-keyboard-backspace"></i></a> <span class="text-muted fw-light"> HOD /</span> Student Profile</h5>
+
 <div class="row">
     <div class="col-md-3 my-2">
         <div class="card">
@@ -13,8 +14,8 @@
               </a>
             </div>
             <div class="card-body text-center">
-              <h6 class="card-title">Alphaxad Joseph Kakulu</h6>
-              <p class="card-text fw-bold">IMC/BIT/1912158</p>
+              <h6 class="card-title">{{$student->firstname." ".$student->middlename." ".$student->lastname}}</h6>
+              <p class="card-text fw-bold">{{$student->IDNumber}}</p>
             </div>
            
           </div>
@@ -44,19 +45,19 @@
             <div class="tab-content">
                 <div class="tab-pane fade active show" id="navs-top-home" role="tabpanel">
                     <div class="">
-                        <span class=" fw-bold"> Tanzania Broad Casting TBC</span>
+                        <span class=" fw-bold">{{$field->company}}</span>
                         <p class="text-muted">Field Company: </p>
 
-                        <span class=" fw-bold"> Information Technology</span>
+                        <span class=" fw-bold"> {{$field->department}}</span>
                         <p class="text-muted">Department: </p>
 
-                        <span class=" fw-bold">Mwanza</span>
+                        <span class=" fw-bold">{{$field->region->region}}</span>
                         <p class="text-muted">Region: </p>
 
-                        <span class=" fw-bold">Nyamagana</span>
+                      <span class=" fw-bold">{{$field->district->district}}</span>
                         <p class="text-muted">District: </p>
                         
-                        <span class=" fw-bold">Nyegezi</span>
+                        <span class=" fw-bold">{{$field->ward->ward}}</span>
                         <p class="text-muted">ward: </p>
                     </div>
                     {{-- <div class="d-flex justify-content-center flex-column align-items-center">
@@ -66,19 +67,19 @@
                 </div>
               <div class="tab-pane fade" id="navs-top-profile" role="tabpanel">
                     <div class="">
-                        <span class=" fw-bold"> Alphaxad Joseph kakulu</span>
+                        <span class=" fw-bold"> {{$student->firstname." ".$student->middlename." ".$student->lastname}}</span>
                         <p class="text-muted">Full Name: </p>
 
-                        <span class=" fw-bold"> Information Technology</span>
+                        <span class=" fw-bold"> {{$student->course->course}}</span>
                         <p class="text-muted">Course: </p>
 
-                        <span class=" fw-bold">Year 3</span>
-                        <p class="text-muted">Year: </p>
+                        <span class=" fw-bold">{{$student->level." Year ".$student->year}}</span>
+                        <p class="text-muted">Level: </p>
 
-                        <span class=" fw-bold">alphaxad@gmail.com</span>
+                        <span class=" fw-bold">{{$student->email}}</span>
                         <p class="text-muted">Email: </p>
                         
-                        <span class=" fw-bold">+255-743-196-599</span>
+                        <span class=" fw-bold">{{$student->phone}}</span>
                         <p class="text-muted">Phone: </p>
                     </div>
                 </div>

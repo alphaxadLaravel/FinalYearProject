@@ -10,8 +10,9 @@
         </div>
         <div class="col-md-6">
             
-            <form action="/add_company" method="POST">
+            <form action="/register_company" enctype="multipart/form-data" method="POST">
                 @csrf
+                <span class=""> <i class="mdi mdi-map-marker-plus"></i> Add New Company Details For Your Faculty!</span>
                 <div class="row mb-3 mt-4">
                     <div class="col-md-6 mb-2">
                         <label for="" class="text-muted mb-2">Company Name </label>
@@ -37,7 +38,7 @@
                         <label for="" class="text-muted mb-2">Company Photo</label>
                         <input type="file" class="form-control" name="photo" id="" aria-describedby="helpId" placeholder="">
                         <small class="text-danger">
-                            @error('regNumber')
+                            @error('photo')
                                 {{$message}}
                             @enderror
                         </small>
@@ -55,9 +56,9 @@
                 <div class="row mb-3">
                     <div class="col-md-12">
                         <label for="" class="text-muted mb-1">About the Company!</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea class="form-control" name="bio" id="exampleFormControlTextarea1" rows="3"></textarea>
                         <small class="text-danger">
-                            @error('regNumber')
+                            @error('bio')
                                 {{$message}}
                             @enderror
                         </small>

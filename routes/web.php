@@ -7,6 +7,8 @@ use App\Http\Controllers\FieldController;
 use App\Http\Controllers\CommentsController;
 use App\Http\Controllers\LogbookController;
 use App\Http\Controllers\WelcomeLetter;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\CompanyController;
 
 
 
@@ -110,10 +112,7 @@ Route::get('/logbook_preview', function () {
     return view('common.logbook_preview');
 });
 
-// Student Profile
-Route::get('/profile', function () {
-    return view('common.profile');
-});
+
 
 // Uploading the Letters route here
 Route::post('/upload',[WelcomeLetter::class,'upload']);
@@ -126,3 +125,10 @@ Route::get('/download_welcome_letter',[WelcomeLetter::class,'downloadWelcome']);
 
 // Download the application letter
 Route::get('/download_application_letter',[WelcomeLetter::class,'downloadApplication']);
+
+// Profile Controller
+Route::get('/profile/{id}',[ProfileController::class,'gotoProfile']);
+
+// Company adding route here
+Route::post('/register_company',[CompanyController::class,'addCompany']);
+

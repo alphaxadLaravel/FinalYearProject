@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('company');
             $table->string('link');
             $table->string('email');
+            $table->string('photo');
             $table->longText('bio');
             $table->string('status')->default('active');
             $table->timestamps();

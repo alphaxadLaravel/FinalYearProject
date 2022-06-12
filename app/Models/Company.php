@@ -16,6 +16,7 @@ class Company extends Model
         'link',
         'email',
         'bio',
+        'photo',
         'status',
     ];
 }

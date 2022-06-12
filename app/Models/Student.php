@@ -12,7 +12,7 @@ class Student extends Model
     protected $table = "students";
 
     protected $fillable = [
-        'user_id',
+        'student_id',
         'firstname',
         'midlename',
         'IDNumber',
@@ -33,5 +33,9 @@ class Student extends Model
     // Student belongd to user
     public function user(){
         return $this->belongsTo(User::class);
+    }
+
+    public function field(){
+        return $this->hasOne(User::class);
     }
 }
