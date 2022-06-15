@@ -14,6 +14,7 @@ class Supervision extends Model
     protected $fillable = [
         'student_id', 
         'staff_id',
+        'faculty_id',
         'status'
     ];
     

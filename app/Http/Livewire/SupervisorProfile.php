@@ -18,10 +18,12 @@ class SupervisorProfile extends Component
 
     public function assign(){
         $supervisor = session()->get('supervisor')['id'];
+        $faculty = session()->get('user')['faculty_id'];
         for ($i=0; $i < count($this->selected); $i++) { 
             Supervision::create([
                 'staff_id'=>$supervisor,
-                'student_id'=>$this->selected[$i]
+                'student_id'=>$this->selected[$i],
+                'faculty_id'=>$faculty
             ]);
         }
        Student::where('id',$this->selected)->update([
