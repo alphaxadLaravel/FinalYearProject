@@ -43,4 +43,9 @@ class Student extends Model
         return $this->hasOne(Supervision::class);
 
     }
+
+    public function comment(){
+        return $this->hasMany(Comment::class);
+
+    }
 }

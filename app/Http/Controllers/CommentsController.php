@@ -11,19 +11,21 @@ class CommentsController extends Controller
     public function commenting(){
         request()->validate([
             'purpose' => 'required',
-            'comment' => 'required|string|min:10|max:180',
+            'comment' => 'required|string|min:30|max:180',
       ]); 
       
-        $studentID = Session::get('user')['id'];
+        $studentID = session()->get('user')['id'];
+        $student_faculty = session()->get('user')['faculty_id'];
         Comment::Create([
             'student_id' => $studentID,
             'reason'=>request('purpose'),
             'comment'=>request('comment'),
+            'faculty_id'=>$student_faculty
         ]);
 
         session()->flash('commented', 'comment added successfulyy!!');
 
-        return redirect('/comment');
+        return redirect('/comments_list');
     }
 
 }

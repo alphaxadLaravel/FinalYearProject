@@ -17,9 +17,9 @@
                         <label for="" class="text-muted mb-2">Comment Purpose <span class="text-danger">*</span></label>
                         <select id="smallSelect" name="purpose" class="form-select ">
                             <option value="">Select Purpose..</option>
-                            <option value="mwanza">Assesment</option>
-                            <option value="mwanza">Allocation</option>
-                            <option value="mwanza">Tasks</option>
+                            <option value="Assesment">Assesment</option>
+                            <option value="Allocation">Allocation</option>
+                            <option value="Tasks">Tasks</option>
                         </select>
                         <small class="text-danger">
                             @error('purpose')

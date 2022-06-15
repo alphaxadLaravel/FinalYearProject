@@ -17,4 +17,8 @@ class Comment extends Model
         'status',
         'faculty_id'
     ];
+
+    public function student(){
+        return $this->belongsTo(Student::class);
+    }
 }
