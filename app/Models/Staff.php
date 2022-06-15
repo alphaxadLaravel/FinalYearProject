@@ -21,4 +21,13 @@ class Staff extends Model
         'phone',
         'status',
     ];
+
+    public function supervising(){
+        return $this->hasMany(Supervision::class);
+
+    }
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }

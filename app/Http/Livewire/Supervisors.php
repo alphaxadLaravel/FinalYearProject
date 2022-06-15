@@ -3,13 +3,13 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
+
 use Livewire\WithPagination;
+
+use App\Models\Staff;
 use Session;
 
-use App\Models\Company;
-
-
-class BrowseCompanies extends Component
+class Supervisors extends Component
 {
     // paginating here
     use WithPagination;
@@ -20,8 +20,7 @@ class BrowseCompanies extends Component
     public function render()
     {
         $staff_faculty = session()->get('user')['faculty_id'];
-        $companies = Company::where('faculty_id', '=', $staff_faculty)->orderBy('id','DESC')->paginate(6);
-
-        return view('livewire.browse-companies',['companies'=>$companies]);
+        $supervisors = Staff::where('faculty_id', '=', $staff_faculty)->where('status','=','supervisor')->orderBy('id','DESC')->paginate(5);
+        return view('livewire.supervisors', ['supervisors'=>$supervisors]);
     }
 }

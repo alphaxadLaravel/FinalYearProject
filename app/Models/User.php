@@ -21,4 +21,8 @@ class User extends Model
     public function student(){
         return $this->hasOne(Student::class);
     }
+
+    public function staff(){
+        return $this->hasOne(Student::class);
+    }
 }

@@ -38,4 +38,9 @@ class Student extends Model
     public function field(){
         return $this->hasOne(User::class);
     }
+
+    public function supervision(){
+        return $this->hasOne(Supervision::class);
+
+    }
 }

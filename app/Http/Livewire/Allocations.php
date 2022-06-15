@@ -17,8 +17,8 @@ class Allocations extends Component
 
     public function render()
     { 
-        $staffID = Session::get('user')['id'];
-        $staff_faculty = Session::get('user')['faculty_id'];
+        $staffID = session()->get('user')['id'];
+        $staff_faculty = session()->get('user')['faculty_id'];
         $data = Field::where('faculty_id', '=', $staff_faculty)->orderBy('id','DESC')->paginate(5);
         
         return view('livewire.allocations',['data'=>$data]);

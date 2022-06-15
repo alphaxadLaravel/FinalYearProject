@@ -132,3 +132,6 @@ Route::get('/profile/{id}',[ProfileController::class,'gotoProfile']);
 // Company adding route here
 Route::post('/register_company',[CompanyController::class,'addCompany']);
 
+// Supervisor Profile here
+Route::get('/super_profile/{id}',[ProfileController::class,'supervisorProfile']);
+
