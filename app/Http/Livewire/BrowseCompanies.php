@@ -4,9 +4,10 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use Livewire\WithPagination;
+use Session;
 
 use App\Models\Company;
-use Session;
+
 
 class BrowseCompanies extends Component
 {
