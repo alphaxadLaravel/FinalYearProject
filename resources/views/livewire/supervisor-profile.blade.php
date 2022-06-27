@@ -1,4 +1,10 @@
 <div>
+    @if (Session::has('assigned'))
+    <div class="alert alert-success alert-dismissible" role="alert">
+        Students Assigned Successfully!
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  @endif
     <div class="row">
         <div class="col-md-3 my-2">
             <div class="card">

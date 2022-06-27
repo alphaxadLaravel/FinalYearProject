@@ -33,7 +33,7 @@ class SupervisorProfile extends Component
        $this->selected = [];
 
        session()->flash('assigned','');
-       return redirect('/supervision');
+       return redirect('/super_profile/'.$supervisor);
     }
 
     public function mount($id)
