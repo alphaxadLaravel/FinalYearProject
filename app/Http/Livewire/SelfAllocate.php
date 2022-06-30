@@ -99,7 +99,6 @@ class SelfAllocate extends Component
             'path' => $data['letter'],
             'region_id' => $this->region,
             'district_id' => $this->district,
-            'staff_id' => $supervisor->staff_id,
             'ward_id' => $this->ward,
             'faculty_id' => $student_faculty,
         ]);
