@@ -1,9 +1,12 @@
 @extends('layouts.app')
 @section('title', "Welcome Letter - IFM Field Management System")
 @section('system')
-
+@if (session()->get('user')['status'] == 'hod')
   <h5 class="fw-bold py-3 mb-2"><a href="/allocations" class="text-primary"><i class="mdi mdi-keyboard-backspace"></i></a> <span class="text-muted fw-light"> HOD /</span> Student Profile</h5>
-
+@endif
+@if (session()->get('user')['status'] == 'supervisor')
+  <h5 class="fw-bold py-3 mb-2"><a href="/allocations" class="text-primary"><i class="mdi mdi-keyboard-backspace"></i></a> <span class="text-muted fw-light"> Supervisor /</span> Student Profile</h5>
+@endif
 <div class="row">
     <div class="col-md-3 my-2">
         <div class="card">
@@ -19,13 +22,14 @@
             </div>
            
           </div>
-
+          @if (session()->get('user')['status'] == 'hod')
           <div class="card my-3 px-3 pt-2 text-center">
             <span class=" fw-bold">Dr.Msurry Mahunna</span>
             <p class="text-muted">Supervised By: </p>
             {{-- <a href="#" class="btn btn-sm btn-outline-primary m-3">Assign Supervisor</a> --}}
 
           </div>
+          @endif
     </div>
     <div class="col-md-9 mt-2">
         <div class="nav-align-top mb-4">
@@ -60,6 +64,12 @@
                         <span class=" fw-bold">{{$field->ward->ward}}</span>
                         <p class="text-muted">ward: </p>
                     </div>
+                    @if (session()->get('user')['status'] == 'supervisor')
+                    <div class="d-flex justify-content-end">
+                      <a href="#" class="btn btn-sm btn-outline-primary">Start LogBook Session</a>
+                    </div>
+                    @endif
+
                     {{-- <div class="d-flex justify-content-center flex-column align-items-center">
                         <img src="{{asset('images/no.gif')}}" height="200px" width="200px" alt="">
                         <p class="text-muted">Field Details will be Here!</p>

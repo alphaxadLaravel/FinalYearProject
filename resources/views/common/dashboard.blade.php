@@ -90,7 +90,8 @@
               <h3 class="card-title mb-2 ">{{$supervisor}}</h3>
               @elseif(session()->get('user')['status'] == "supervisor")
               <span class="fw-semibold d-block mb-1"><i class="mdi mdi mdi-message-video"></i>Assesments</span>
-              <h3 class="card-title mb-2 ">3</h3>
+              <h3 class="card-title mb-2 ">0</h3>
+              
               @endif
 
             </div>
@@ -160,6 +161,7 @@
                 <h3 class="card-title mb-2 ">0</h3>
               @elseif(session()->get('user')['status'] == "supervisor")
               <span class="fw-semibold d-block mb-1"><i class="mdi mdi-cloud-upload "></i>Uploads</span>
+              <h3 class="card-title mb-2 ">0</h3>
               @endif
               </div>
             </div>

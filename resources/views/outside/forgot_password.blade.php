@@ -31,7 +31,7 @@
                                 <button class="btn btn-outline-primary" type="submit"><i class="mdi mdi-login"></i> Recover Password</button>
                             </div>
                             <div class="text-center text-muted">
-                                <small>Remebered your Password? <a href="/" class="text-ifm">Back to login</a></small>
+                                <small>Remebered your Password? <a href="/login" class="text-ifm">Back to login</a></small>
                             </div>
                         </form>
                         </div>
