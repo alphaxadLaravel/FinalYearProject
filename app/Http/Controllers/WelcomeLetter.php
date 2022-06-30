@@ -15,8 +15,8 @@ class WelcomeLetter extends Controller
             'purpose' => 'required',
         ]);
 
-        $user_id = Session::get('user')['id'];
-        $faculty_id = Session::get('user')['faculty_id'];
+        $user_id = session()->get('user')['id'];
+        $faculty_id = session()->get('user')['faculty_id'];
         // $data = Document::where('faculty_id', '=', $faculty_id)->get();
         $data = Document::where('faculty_id', '=', $faculty_id)->where('purpose', '=', request('purpose'))->first();
         
@@ -58,7 +58,7 @@ class WelcomeLetter extends Controller
 
     public function showLetter(){
         
-        $faculty_id = Session::get('user')['faculty_id'];
+        $faculty_id = session()->get('user')['faculty_id'];
         $welcome = Document::where('faculty_id', '=', $faculty_id)->where('purpose', '=', 'Welcome Letter')->first();
         $application = Document::where('faculty_id', '=', $faculty_id)->where('purpose', '=', 'Application Letter')->first();
 
@@ -70,7 +70,7 @@ class WelcomeLetter extends Controller
     }
 
     public function downloadWelcome(){
-        $faculty_id = Session::get('user')['faculty_id'];
+        $faculty_id = session()->get('user')['faculty_id'];
 
         $file = Document::where('faculty_id', '=', $faculty_id)->where('purpose', '=', 'Welcome Letter')->first();
         return response()->download(public_path($file->path));
@@ -78,7 +78,7 @@ class WelcomeLetter extends Controller
     }
 
     public function downloadApplication(){
-        $faculty_id = Session::get('user')['faculty_id'];
+        $faculty_id = session()->get('user')['faculty_id'];
 
         $file = Document::where('faculty_id', '=', $faculty_id)->where('purpose', '=', 'Welcome Letter')->first();
         return response()->download(public_path($file->path));

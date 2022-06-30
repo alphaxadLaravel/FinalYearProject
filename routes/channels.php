@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Broadcast;
 
 /*
+
 |--------------------------------------------------------------------------
 | Broadcast Channels
 |--------------------------------------------------------------------------
@@ -11,6 +12,7 @@ use Illuminate\Support\Facades\Broadcast;
 | application supports. The given channel authorization callbacks are
 | used to check if an authenticated user can listen to the channel.
 |
+
 */
 
 Broadcast::channel('App.Models.User.{id}', function ($user, $id) {

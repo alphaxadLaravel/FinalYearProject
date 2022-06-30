@@ -1,26 +1,40 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\LogBook;
 
 use Illuminate\Http\Request;
 
 class LogbookController extends Controller
 {
     public function fillLogbook(){
+
         request()->validate([
-            'task' => 'required|string|min:50|max:250',
-            'lesson' => 'required|string|min:50|max:250',
+            'task' => 'required|string|min:150|max:500',
+            'lesson' => 'required|string|min:150|max:500',
       ]); 
       
-        $studentID = Session::get('user')['id'];
-        Comment::Create([
+        $studentID = session()->get('user')['id'];
+        LogBook::Create([
             'student_id' => $studentID,
-            'reason'=>request('purpose'),
-            'comment'=>request('comment'),
+            'lesson'=>request('lesson'),
+            'task'=>request('task'),
+            'week' => $studentID,
+            'day' => $studentID,
+            'status' => "On Time",
         ]);
 
         session()->flash('filledLogbook', 'Logbook filled  successfulyy!!');
 
         return redirect('/fill_logbook');
+    }
+
+    public function previewLogbook(){
+
+        $user_id = session()->get('user')['id'];
+
+        $logbook = LogBook::where('student_id',$user_id)->get();
+
+        return view('common.logbook_preview',['logbook'=>$logbook]);
     }
 }

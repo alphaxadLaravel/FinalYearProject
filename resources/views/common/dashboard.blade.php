@@ -30,7 +30,7 @@
               <a href="javascript:;" class="btn btn-sm btn-outline-primary">Open Session</a>
               @elseif(session()->get('user')['status'] == "supervisor")
               {{-- for the supervisor here --}}
-              <a href="javascript:;" class="btn btn-sm btn-outline-primary">View Students</a>
+              <a href="/all_students" class="btn btn-sm btn-outline-primary">View Students</a>
               @endif
             </div>
           </div>

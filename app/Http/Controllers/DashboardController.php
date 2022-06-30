@@ -10,7 +10,7 @@ class DashboardController extends Controller
 {
     public function dashboard(){
 
-        $hodFaculty = Session::get('user')['faculty_id'];
+        $hodFaculty = session()->get('user')['faculty_id'];
         $students = User::all()->where('faculty_id' ,'=', $hodFaculty)->where('status', '=', 'student')->count();
         $supervisor = User::all()->where('faculty_id' ,'=', $hodFaculty)->where('status', '=', 'supervisor')->count();
 

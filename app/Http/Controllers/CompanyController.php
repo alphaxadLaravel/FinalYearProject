@@ -18,7 +18,8 @@ class CompanyController extends Controller
             'photo'=>'required|mimes:jpg,png,jpeg|max:2048',
       ]); 
         
-        $faculty_id = Session::get('user')['faculty_id'];
+        $faculty_id = session()->get('user')['faculty_id'];
+        
         $photoName = time().'.'.request('photo')->extension();  
 
         request('photo')->move(public_path('companies'), $photoName);

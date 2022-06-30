@@ -106,14 +106,6 @@ Route::get('/fill_logbook', function () {
 // Route to fill the logbook
 Route::post('/fillLogbook', [LogbookController::class,'fillLogbook']);
 
-
-// Logbook Preview 
-Route::get('/logbook_preview', function () {
-    return view('common.logbook_preview');
-});
-
-
-
 // Uploading the Letters route here
 Route::post('/upload',[WelcomeLetter::class,'upload']);
 
@@ -135,3 +127,10 @@ Route::post('/register_company',[CompanyController::class,'addCompany']);
 // Supervisor Profile here
 Route::get('/super_profile/{id}',[ProfileController::class,'supervisorProfile']);
 
+// Preview Logbook here
+Route::get('/logbook_preview',[LogbookController::class,'previewLogbook']);
+
+// Logbook Preview 
+Route::get('/', function () {
+    return view('common.');
+});

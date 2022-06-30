@@ -14,10 +14,10 @@ class Logbook extends Model
         'student_id',
         'week',
         'day',
-        'distict_id',
         'task',
         'lesson',
         'status',
     ];
+
 
 }

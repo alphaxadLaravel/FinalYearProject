@@ -42,7 +42,7 @@
                 </div>
                 <div class="flex-grow-1">
                     <span class="fw-semibold d-block">Alphaxad Jozee</span>
-                    <small class="text-muted">Student</small>
+                    <small class="text-muted">{{ucfirst(session()->get('user')['status'])}}</small>
                 </div>
                 </div>
             </a>

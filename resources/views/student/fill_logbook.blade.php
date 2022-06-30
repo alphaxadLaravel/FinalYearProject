@@ -13,7 +13,7 @@
             <form action="/fillLogbook" method="POST">
                 @csrf
                 <div class="d-flex justify-content-end my-2">
-                    <small><i class="mdi mdi-calendar"></i>  20/22/2022 <span class="text-primary">Week -8</span> Day -24</small>
+                    <small><i class="mdi mdi-calendar"></i>  20/22/2022 <span class="text-primary">Week -1</span> Day -1</small>
                 </div>
                 <div class="row mb-3">
                     <div class="col-md-12">
