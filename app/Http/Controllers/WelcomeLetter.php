@@ -80,7 +80,7 @@ class WelcomeLetter extends Controller
     public function downloadApplication(){
         $faculty_id = session()->get('user')['faculty_id'];
 
-        $file = Document::where('faculty_id', '=', $faculty_id)->where('purpose', '=', 'Welcome Letter')->first();
+        $file = Document::where('faculty_id', '=', $faculty_id)->where('purpose', '=', 'Application Letter')->first();
         return response()->download(public_path($file->path));
     }
     

@@ -58,7 +58,7 @@
           
         </div>
       </div>
-      <div class=" d-flex justify-content-end">
+      <div class=" d-flex justify-content-center mt-3">
         {{$supervision->links()}}
       </div>
 </div>

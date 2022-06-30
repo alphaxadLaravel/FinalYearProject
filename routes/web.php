@@ -24,7 +24,7 @@ use App\Http\Controllers\CompanyController;
 */
 
 // login page route
-Route::get('/', function () {
+Route::get('/login', function () {
     return view('outside.login');
 });
 

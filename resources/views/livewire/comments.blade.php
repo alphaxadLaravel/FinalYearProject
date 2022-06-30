@@ -13,7 +13,7 @@
                     {{$comment->comment}}
                   </p>
                   <footer class="blockquote-footer mt-1">
-                    2 Days Ago
+                    {{$comment->created_at->format('d.M')}}
                   </footer>
                 </div>
             </div>

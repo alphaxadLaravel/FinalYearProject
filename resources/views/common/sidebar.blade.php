@@ -210,13 +210,13 @@
         <ul class="menu-sub">
           @if (session()->get('user')['status'] == "hod")
           <li class="menu-item">
-            <a href="/add_company" class="menu-link">
+            <a href="#" class="menu-link">
               <div data-i18n="Container">Assign Tasks</div>
             </a>
           </li>
           @endif
           <li class="menu-item">
-            <a href="/browse_companies" class="menu-link">
+            <a href="#" class="menu-link">
               <div data-i18n="Without menu">All Tasks</div>
             </a>
           </li>
@@ -225,7 +225,7 @@
       @endif
 
       <li class="menu-item">
-        <a href="cards-basic.html" class="menu-link">
+        <a href="#" class="menu-link">
           <i class="menu-icon mdi mdi-bell-ring-outline"></i>
           <div data-i18n="Basic">Notifications</div>
         </a>

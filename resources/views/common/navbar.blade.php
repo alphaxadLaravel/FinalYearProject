@@ -69,7 +69,7 @@
             <div class="dropdown-divider"></div>
             </li>
             <li>
-            <a class="dropdown-item" href="/">
+            <a class="dropdown-item" href="/login">
                 <i class="mdi mdi-power-settings me-2"></i>
                 <span class="align-middle">Log Out</span>
             </a>

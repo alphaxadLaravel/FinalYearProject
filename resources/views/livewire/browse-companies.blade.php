@@ -6,11 +6,11 @@
             <div class="card h-100">
                 <img class="card-img-top" src="{{asset($company->photo)}}" height="250px" alt="Card image cap img-fluid">
                 <div class="card-body">
-                  <h5 class="card-title">{{$company->company}}</h5>
+                  <h5 class="card-title fw-bold">{{$company->company}}</h5>
                   <p class="card-text">
                    {{$company->bio}}
                   </p>
-                  <p>Email: {{$company->email}}</p>
+                  <p><b>Email</b>: {{$company->email}}</p>
                   <a href="{{$company->link}}" target="_blank" class="btn btn-outline-primary w-100 ">Visit Company</a>
                 </div>
             </div>

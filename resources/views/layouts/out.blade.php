@@ -25,8 +25,8 @@
     </style>
 </head>
 <body class="row m-auto d-flex justify-content-center align-items-center">
-    @yield('outside')
 
+    @yield('outside')
     
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>

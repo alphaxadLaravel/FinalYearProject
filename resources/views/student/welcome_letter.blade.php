@@ -20,7 +20,7 @@
     <div class="tab-content">
       <div class="tab-pane fade " id="navs-top-home" role="tabpanel">
           @if ($welcome)
-              <p><span class="text-danger">* </span> Download the Welcome letter and Provide it to yur indtructor to sign!</p>
+              <p><span class="text-danger">* </span> Download the Welcome letter and Provide it to yur instructor to sign!</p>
               <a href="/download_welcome_letter" class="btn btn-outline-primary ">Download Welcome Letter <i class="mdi mdi-download"></i></a>
           @else
             <div class="d-flex justify-content-center flex-column align-items-center">
@@ -116,7 +116,7 @@
     </div>
       <div class="tab-pane fade" id="navs-top-profile" role="tabpanel">
           @if ($welcome || $application)
-            <p> You can Update the Letters by uploading Again!</p>
+            <p> You can Update the Letter(s) by uploading Again!</p>
 
             @if ($welcome)
               <a href="/download_welcome_letter" class="btn btn-outline-primary mt-3"> Welcome Letter <i class="mdi mdi-eye"></i></a>
